@@ -9,7 +9,7 @@ This folder holds example queries for each language.
 
 - Type: string
 - Example value: `array-access`
-- Pattern: `/[a-zA-Z0-9\-]+/`
+- Pattern: `/^[a-zA-Z0-9\-]+/$`
 </details>
 
 <details>
@@ -17,7 +17,6 @@ This folder holds example queries for each language.
 
 - Type: string
 - Example value: `Array Access`
-- Pattern: `/.+/`
 </details>
 
 <details>
@@ -32,6 +31,7 @@ This folder holds example queries for each language.
 
 - Type: string
 - Example value: `LGTM`
+- Pattern: `/[a-zA-Z0-9\-]+/`
 </details>
 
 <details>
