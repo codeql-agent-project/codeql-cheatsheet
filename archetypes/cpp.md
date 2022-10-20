@@ -1,11 +1,11 @@
 {
-"id": "",
+"id": "{{.Name}}",
 "name": "{{ replace .Name "-" " " | title }}",
 "date": "{{ .Date }}",
 "language": "cpp",
 "description": "",
 "author": "",
-"tags": [],
+"tags": ["cpp],
 "categories": [],
 "code": "",
 "complexity": ""

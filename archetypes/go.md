@@ -2,10 +2,10 @@
 "id": "{{.Name}}",
 "name": "{{ replace .Name "-" " " | title }}",
 "date": "{{ .Date }}",
-"language": "javascript",
+"language": "go",
 "description": "",
 "author": "",
-"tags": ["javascript"],
+"tags": ["go"],
 "categories": [],
 "code": "",
 "complexity": ""

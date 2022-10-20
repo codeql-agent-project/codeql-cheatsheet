@@ -1,0 +1,12 @@
+{
+"id": "conditional-expressions",
+"name": "Conditional Expressions",
+"date": "2022-10-21T01:12:34+07:00",
+"language": "javascript",
+"description": "Finds conditional expressions of the form '... if ... else ...' where the classes of the sub-expressions differ",
+"author": "LGTM",
+"tags": ["python", "basic", "pattern"],
+"categories": [],
+"code": "import python\nfrom IfExp e, ClassObject cls1, ClassObject cls2\nwhere\n  e.getBody().refersTo(_, cls1, _) and\n  e.getOrelse().refersTo(_, cls2, _) and\n  cls1 != cls2\nselect e",
+"complexity": "basic"
+}

@@ -25,4 +25,26 @@ pre[class^="language-"] {
     border-width: 1px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+
+    display: grid;
+    grid-template-columns: 15% 30% 50% 5%;
+    grid-template-rows: auto;
+}
+
+.queries-list-item:hover{
+    background-color: #eef1f5;
+    border-color: #e1e4e8;
+}
+
+.preview-description{
+    font-size: 1.1rem;
+}
+
+.preview-arrow-icons {
+    width: 45%;
+    height: auto;
+}
+
+.preview-title:hover {
+    text-decoration: none;
 }

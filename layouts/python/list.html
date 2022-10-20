@@ -1,0 +1,6 @@
+{{define "main"}}
+    <h1 class="col-header dark-orange">Python Cheatsheets</h1>
+    {{ range (.Site.GetPage "python").Pages }}
+        {{ partial "queries-list.html" . }}
+    {{end}}
+{{end}}

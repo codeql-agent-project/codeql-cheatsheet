@@ -1,9 +1,6 @@
 {{define "main"}}
 <h1 class="col-header dark-orange">C++ Cheatsheets</h1>
     {{ range (.Site.GetPage "cpp").Pages }}
-        <div class="queries-list-item">
-            <a class="preview-title" href="{{ .Permalink }}">[{{.Params.complexity | upper}}]&nbsp;&nbsp;&nbsp;{{ .Params.name }}&nbsp;&nbsp;&nbsp;>>> </a>
-            <p>{{.Params.description}}</p>
-        </div>
+        {{ partial "queries-list.html" . }}
     {{end}}
 {{end}}
