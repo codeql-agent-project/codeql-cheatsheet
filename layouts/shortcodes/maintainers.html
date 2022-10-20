@@ -1,0 +1,17 @@
+<div class="contact">
+    <h2 class="contact__heading">{{ with .Get "title" }}{{ . }}{{ else }}Our amazing team{{ end }}</h2>
+    <p>If you have some questions, feel free to contact us.</p>
+</div>
+<div class="staff">
+    {{ range .Site.Data.maintainers }}
+        <div class="staff-member">
+            <img class="staff-member__image" src="{{ .image }}">
+            <div>
+                <p class="staff-member__name">{{ .name }}</p>
+                <ul class="staff-member__contacts">
+                    <li><a class="option" href="{{.url}}">Github</a></li>
+                </ul>
+            </div>
+        </div>
+    {{ end }}
+</div>
