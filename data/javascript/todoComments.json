@@ -1,0 +1,9 @@
+{
+    "id": "todo-comments",
+    "language": "",
+    "type": "pattern",
+    "name": "TODO Comments",
+    "description": "Finds comments containing the word TODO",
+    "author": "LGTM",
+    "code": "import javascript\nfrom Comment c\nwhere c.getText().regexpMatch(\"(?si).*\\bTODO\\b.*\")\nselect c, \"TODO comments indicate that the code may not be complete.\""
+}

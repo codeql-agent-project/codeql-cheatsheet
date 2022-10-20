@@ -1,0 +1,17 @@
+<div class="cheatsheet-detail-body">
+<h1>{{$.Params.name}}</h1>
+<div class="tag-group">
+    {{ range .Params.tags }}
+    <div class="tag">
+        <span class="tag-text">
+        <a href="/tags/{{. | urlize }}">{{.}}</a>
+    </span>
+</div>
+    {{end}}
+</div>
+<h4>Author: {{$.Params.author}}</h4>
+<pre><code class="language-sql">{{.Params.code}}</code></pre>
+
+<h4>Description</h4>
+<p>{{$.Params.description}}</p>
+</div>

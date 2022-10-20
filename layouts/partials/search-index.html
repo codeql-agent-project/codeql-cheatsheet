@@ -1,0 +1,51 @@
+{{ range ($.Site.GetPage "javascript").Pages }}
+// For all pages in your site, use "range .Site.Pages"
+// You can use any unique identifier here
+{{ end }}
+
+<script>
+    {{ range ($.Site.GetPage "javascript").Pages }}
+    // For all pages in your site, use "range .Site.Pages"
+    // You can use any unique identifier here
+    {{ end }}
+    window.localStorage["idx"] = JSON.stringify([{
+        // You can specify your blog section only:
+        {{ range ($.Site.GetPage "javascript").Pages }}
+        // For all pages in your site, use "range .Site.Pages"
+        // You can use any unique identifier here
+        {{ end }}
+    }]);
+
+    console.log("window.localStorage", window.localStorage);
+
+    {{/*  window.localStorage["idx"] = JSON.stringify([{
+        "name": "Lunr",
+        "text": "Like Solr, but much smaller, and not as bright."
+      }, {
+        "name": "React",
+        "text": "A JavaScript library for building user interfaces."
+      }, {
+        "name": "Lodash",
+        "text": "A modern JavaScript utility library delivering modularity, performance & extras."
+      }]);  */}}
+{{/*  
+      "{{ .Permalink }}": {
+        // You can customize your searchable fields using any .Page parameters
+        "tags": [{{ range .Params.Tags }}"{{ . }}",{{ end }}],
+        "url": "{{ .Permalink }}",
+        "code": {{.Params.code | plainify}},
+        "description": {{.Params.description}},
+        "complexity": {{.Params.complexity}},
+        "name": {{.Params.name}},
+        "id": {{.Params.id}},
+        "author": {{.Params.author}},
+        "language": {{.Params.language}},
+        "content": {{ .Content | plainify }}, // Strip out HTML tags
+        "title": "{{ .Title  }}",
+    },  */}}
+
+</script>
+<!-- Include Lunr and code for your search function,
+which you'll write in the next section -->
+<script src="/js/lunr.js"></script>
+<script src="/js/search.js"></script>

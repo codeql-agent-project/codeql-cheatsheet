@@ -1,0 +1,12 @@
+{
+    "id": "call-to-eval",
+    "name": "Calls to function Eval",
+    "date": "{{ .Date }}",
+    "language": "javascript",
+    "description": "Finds function calls of the form `eval(...)`",
+    "author": "LGTM",
+    "tags": ["basic", "pattern","javascript"],
+    "categories": [],
+    "code": "import javascript\nfrom CallExpr c\nwhere c.getCalleeName() = \"eval\"\nselect c",
+    "complexity": "expert"
+}
