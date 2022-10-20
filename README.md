@@ -19,5 +19,5 @@ hugo new javascript/the-query-name.md
 
 ## Complement Links
 ### Code to string format
-[Replace " -> \"](https://coding.tools/regex-replace)
+[Replace " -> \\"](https://coding.tools/regex-replace)  
 [Remove newline -> "\n"](https://www.gillmeister-software.com/online-tools/text/remove-line-breaks.aspx)
