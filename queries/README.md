@@ -20,10 +20,24 @@ This folder holds example queries for each language.
 </details>
 
 <details>
+    <summary>language</summary>
+
+- Type: string
+- Accepted value: `go`, `javascript`, `java`, `python`, `cpp`, `csharp`, `ruby`
+</details>
+
+<details>
     <summary>description</summary>
 
 - Type: string
 - Example value: `Finds array access expressions with an index expression consisting of a postfix increment (`++`) expression.`
+</details>
+
+<details>
+    <summary>tags</summary>
+    
+- Type: array of strings
+- Example value: `['javascript', 'basic', 'pattern']`
 </details>
 
 <details>
@@ -45,4 +59,11 @@ This folder holds example queries for each language.
     where a.getArrayOffset() instanceof PostfixIncrExpr
     select a
   ```
+</details>
+
+<details>
+    <summary>complexity</summary>
+
+- Type: string
+- Accepted value: 'basic', 'advanced', 'expert'
 </details>
