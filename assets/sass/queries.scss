@@ -17,8 +17,9 @@ pre[class^="language-"] {
 }
 
 .queries-list-item{
-    margin: 10px;
-    padding: 20px;
+    width: 100%;
+    margin: 5px;
+    padding: 3px;
     background-color: #f6f8fa;
     border-color: #e1e4e8;
     border-style: solid;
@@ -28,12 +29,17 @@ pre[class^="language-"] {
 
     display: grid;
     grid-template-columns: 15% 30% 50% 5%;
-    grid-template-rows: auto;
 }
 
 .queries-list-item:hover{
     background-color: #eef1f5;
     border-color: #e1e4e8;
+}
+
+.queries-list-item * {
+    display: flex;
+    align-items: center;
+    margin: 6px 2px;
 }
 
 .preview-description{

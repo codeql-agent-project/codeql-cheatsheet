@@ -6,7 +6,7 @@ $dark-orange: #BC6C25;
 $link-bl: #283618;
 $desktop-page-sp: 100px;
 $container-padding-sm: 24px;
-$container-padding-lg: 96px;
+$container-padding-lg: 48px;
 
 * {
   padding: 0;
@@ -88,6 +88,10 @@ a:hover {
 
 .dark-orange {
   color: $dark-orange;
+}
+
+.col-header {
+  margin: 0 auto;
 }
 
 .heading-secondary {
@@ -534,7 +538,7 @@ a:hover {
 }
 
 /* Desktop menu */
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
 
   .post-preview {
     display: flex;
@@ -580,8 +584,14 @@ a:hover {
   .page-content {
     padding: 0;
     margin: 40px 0 80px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
+  .page-content h1 {
+
+  }
 
   .featured {
     margin-top: 40px;
