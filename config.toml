@@ -1,6 +1,7 @@
-baseURL = 'https://codeql-agent-project.github.io/codeql-cheatsheet'
+baseURL = 'https://codeql-agent-project.github.io/codeql-cheatsheet/'
 languageCode = 'en-us'
 title = 'CodeQL Cheatsheets'
+relativeURLs = "true"
 
 [taxonomies]
   tag = "tags"
