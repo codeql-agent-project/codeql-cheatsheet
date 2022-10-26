@@ -1,7 +1,0 @@
-{{define "main"}}
-<h1 class="col-header dark-orange">Javascript Cheatsheets</h1>
-    {{/*  {{ partial "search-form.html" . }}  */}}
-    {{ range (.Site.GetPage "javascript").Pages }}
-        {{ partial "queries-list.html" . }}
-    {{end}}
-{{end}}

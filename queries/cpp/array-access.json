@@ -1,7 +1,0 @@
-{
-    "id": "array-access",
-    "name": "Array Access",
-    "description": "Finds array access expressions with an index expression consisting of a postfix increment (`++`) expression.",
-    "author": "LGTM",
-    "code": "import cpp\n\nfrom ArrayExpr a\nwhere a.getArrayOffset() instanceof PostfixIncrExpr\nselect a"
-}

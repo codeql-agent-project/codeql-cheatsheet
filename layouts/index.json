@@ -1,6 +1,0 @@
-{{- $.Scratch.Add "pagesIndex" slice -}}
-{{- range (.Site.GetPage "javascript").Pages -}}
-    {{- $pageData := (dict  "url" .Permalink "name" .Params.name "description" .Params.description "language" .Params.language "code" .Params.code "complexity" .Params.complexity "tags" (delimit .Params.tags " ; ") ) -}}
-    {{- $.Scratch.Add "pagesIndex" $pageData -}}
-{{- end -}}
-{{- $.Scratch.Get "pagesIndex" | jsonify -}}
