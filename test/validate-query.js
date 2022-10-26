@@ -21,8 +21,9 @@ const querySchema = {
         author: {type: "string"},
         authorURL: {type: "string"},
         tags: {
-            elements: {
-                type: "string"
+            type: "array",
+            items: {
+                type: "integer"
             }
         },
         description: { type: "string" },
