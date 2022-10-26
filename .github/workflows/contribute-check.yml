@@ -1,0 +1,85 @@
+name: Contribute Check
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches:
+      - "add-queries"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # windows-latest | macos-latest
+    name: Test changed-files
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
+
+      - name: Get changed file in allowed folders (/queries/<language>)
+        id: changed-files
+        uses: tj-actions/changed-files@v34
+        with:
+          files: |
+            queries/cpp/**
+            queries/csharp/**
+            queries/go/**
+            queries/python/**
+            queries/java/**
+            queries/javascript/**
+            queries/ruby/**
+
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed"
+          done
+
+      - name: List all added files
+        run: |
+          for file in ${{ steps.changed-files.outputs.added_files }}; do
+            echo "$file was added"
+          done
+
+      - name: List all type copied files
+        run: |
+          for file in ${{ steps.changed-files.outputs.copied_files }}; do
+            echo "$file was modified"
+          done
+
+      - name: List all modified files
+        run: |
+          for file in ${{ steps.changed-files.outputs.modified_files }}; do
+            echo "$file was modified"
+          done
+
+      - name: List all renamed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.renamed_files }}; do
+            echo "$file was modified"
+          done
+
+      - name: List all type changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.type_changed_files }}; do
+            echo "$file was modified"
+          done
+
+      - name: List all type deleted files
+        run: |
+          for file in ${{ steps.changed-files.outputs.deleted_files }}; do
+            echo "$file was modified"
+          done
+
+      - name: Invalid commit changed
+        run: |
+          for file in ${{ steps.changed-files.outputs.other_changed_files }}; do
+            echo ${{ steps.changed-files.outputs.other_changed_files }}
+          done
+
+      - name: Invalid commit changed existed then failed exit
+        if: steps.changed-files.outputs.other_changed_files != ''
+        uses: actions/github-script@v3
+        with:
+          script: |
+              core.setFailed('Invalid file changed detect, please update in queries/<language> folder only.')
