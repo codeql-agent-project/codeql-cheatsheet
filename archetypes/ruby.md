@@ -5,6 +5,7 @@
 "language": "ruby",
 "description": "",
 "author": "",
+"authorURL": "",
 "tags": ["ruby"],
 "categories": [],
 "code": "",
