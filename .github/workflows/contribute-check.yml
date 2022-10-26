@@ -8,10 +8,16 @@ on:
       - "add-queries"
 
 jobs:
-  build:
+  check-commit-changed:
     runs-on: ubuntu-latest  # windows-latest | macos-latest
     name: Test changed-files
     steps:
+      - name: Check for Resolves / Fixes
+        uses: gsactions/commit-message-checker@v2
+        with:
+          pattern: '^(Add|Modified|Delete): (cpp|csharp|go|java|javascript|python|ruby)\/[a-z\-]+\.json$'
+          error: 'Commit contribute queries must be: "Add: cpp/file-name.json" the same with modified, delete'
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # OR "2" -> To retrieve the preceding commit.
