@@ -74,7 +74,7 @@ jobs:
       - name: Invalid commit changed
         run: |
           for file in ${{ steps.changed-files.outputs.other_changed_files }}; do
-            echo "$file was modified"
+            echo ${{ steps.changed-files.outputs.other_changed_files }}
           done
 
       - name: Invalid commit changed existed then failed exit
