@@ -5,6 +5,7 @@
 "language": "go",
 "description": "",
 "author": "",
+"authorURL": "",
 "tags": ["go"],
 "categories": [],
 "code": "",
