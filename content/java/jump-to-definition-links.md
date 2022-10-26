@@ -1,0 +1,13 @@
+{
+"id": "jump-to-definition-links",
+"name": "Jump-to-definition links",
+"date": "2022-10-26T17:34:51+07:00",
+"language": "java",
+"description": "Generates use-definition pairs that provide the data for jump-to-definition in the code viewer.",
+"author": "Semmle LGTM",
+"authorURL": "",
+"tags": ["java"],
+"categories": ["java", "basic", "pattern"],
+"code": "import definitions\nexternal string selectedSourceFile();\nfrom Element e, Element def, string kind\nwhere def = definitionOf(e, kind) and e.getFile() = getFileBySourceArchiveName(selectedSourceFile())\nselect e, def, kind",
+"complexity": "basic"
+}
