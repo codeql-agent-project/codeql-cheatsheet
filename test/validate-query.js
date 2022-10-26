@@ -4,7 +4,7 @@ const Ajv = require("ajv");
 const ajv = new Ajv();
 const path = require("path");
 
-const PROJECT_DIRECTORY_PATH = path.resolve("../");
+const PROJECT_DIRECTORY_PATH = process.env.GITHUB_WORKSPACE;
 const config = {
     queriesDirectory: `${PROJECT_DIRECTORY_PATH}/queries`,
 }
