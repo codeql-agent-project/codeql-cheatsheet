@@ -5,6 +5,7 @@
 "language": "javascript",
 "description": "",
 "author": "",
+"authorURL": "",
 "tags": ["javascript"],
 "categories": [],
 "code": "",
