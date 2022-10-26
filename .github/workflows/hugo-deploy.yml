@@ -52,7 +52,7 @@ jobs:
           node-version: 16.x
 
       - name: Generate ./content md from ./queries json
-        run: node ${{ env.GITHUB_WORKSPACE }}/scripts/generate-content.js
+        run: node ${GITHUB_WORKSPACE}/scripts/generate-content.js
 
       - name: Build
         run: hugo --minify
