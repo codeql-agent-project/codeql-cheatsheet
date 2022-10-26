@@ -6,7 +6,7 @@ const path = require("path");
 
 const PROJECT_DIRECTORY_PATH = path.resolve("../");
 const config = {
-    queriesDirectory: `${PROJECT_DIRECTORY_PATH}/queries`,
+    queriesDirectory: `../queries`,
 }
 
 const querySchema = {
