@@ -7,7 +7,6 @@
 "author": "",
 "authorURL": "",
 "tags": ["go"],
-"categories": [],
 "code": "",
 "complexity": ""
 }

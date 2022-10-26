@@ -9,7 +9,8 @@
 </div>
     {{end}}
 </div>
-<h4>Author: {{$.Params.author}}</h4>
+<a href="{{$.Params.authorURL}}"><h4>Author: {{$.Params.author}}</h4></a>
+
 <pre><code class="language-sql">{{.Params.code}}</code></pre>
 
 <h4>Description</h4>

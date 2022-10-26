@@ -7,7 +7,6 @@
 "author": "",
 "authorURL": "",
 "tags": ["cpp],
-"categories": [],
 "code": "",
 "complexity": ""
 }

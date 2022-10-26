@@ -7,7 +7,6 @@
 "author": "",
 "authorURL": "",
 "tags": ["python"],
-"categories": [],
 "code": "",
 "complexity": ""
 }
