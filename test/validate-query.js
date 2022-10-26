@@ -2,7 +2,9 @@ const fs = require('fs');
 const assert = require('assert');
 const Ajv = require("ajv");
 const ajv = new Ajv();
+const path = require("path");
 
+const PROJECT_DIRECTORY_PATH = path.resolve("../");
 const config = {
     queriesDirectory: `${PROJECT_DIRECTORY_PATH}/queries`,
 }
