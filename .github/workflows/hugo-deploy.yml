@@ -4,8 +4,7 @@ name: Deploy Hugo site to Github Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: 
-      - main
+    branches: ["main"]
   pull_request:
 
   # Allows you to run this workflow manually from the Actions tab
