@@ -1,1 +1,1 @@
-[]
+[{"code":"import javascript\nfrom CallExpr c\nwhere c.getCalleeName() = \"eval\"\nselect c","complexity":"basic","description":"Finds function calls of the form eval(...)","language":"javascript","name":"Call to Eval","tags":"pattern ; javascript ; basic","url":"https://codeql-agent-project.github.io/codeql-cheatsheet/javascript/call-to-eval/"}]
