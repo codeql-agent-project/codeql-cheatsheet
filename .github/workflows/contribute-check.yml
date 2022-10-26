@@ -78,7 +78,7 @@ jobs:
           done
 
       - name: Invalid commit changed existed then failed exit
-        if: steps.changed-files.outputs.other_changed_files != []
+        if: steps.changed-files.outputs.other_changed_files != '[]'
         uses: actions/github-script@v3
         with:
           script: |
