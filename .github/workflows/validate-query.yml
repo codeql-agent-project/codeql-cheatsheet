@@ -2,7 +2,12 @@ name: Validate Query
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [ "main" ]
+  push:
+    branches:
+      - "main"
+      - "dev-web"
+      - "add-queries"
 
 jobs:
   build:

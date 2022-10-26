@@ -4,8 +4,7 @@ name: Deploy Hugo site to Github Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: 
-      - main
+    branches: ["main"]
   pull_request:
     branches: 
       - main
@@ -49,6 +48,14 @@ jobs:
         with:
           hugo-version: 'latest'
           # extended: true
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: Generate ./content md from ./queries json
+        run: node ${{GITHUB_WORKSPACE}}/scripts/generate-content.js
 
       - name: Build
         run: hugo --minify

@@ -7,7 +7,6 @@
 "author": "",
 "authorURL": "",
 "tags": ["javascript"],
-"categories": [],
 "code": "",
 "complexity": ""
 }

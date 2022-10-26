@@ -7,7 +7,6 @@
 "author": "",
 "authorURL": "",
 "tags": ["ruby"],
-"categories": [],
 "code": "",
 "complexity": ""
 }

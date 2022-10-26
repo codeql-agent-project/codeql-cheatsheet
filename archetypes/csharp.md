@@ -7,7 +7,6 @@
 "author": "",
 "authorURL": "",
 "tags": ["csharp"],
-"categories": [],
 "code": "",
 "complexity": ""
 }

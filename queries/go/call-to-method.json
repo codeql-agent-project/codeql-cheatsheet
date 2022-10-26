@@ -1,7 +1,0 @@
-{
-    "id": "call-to-method",
-    "name": "Call to method",
-    "description": "Finds calls to the `Get` method of type `Header` from the `net/http` package.",
-    "author": "LGTM",
-    "code":"import go\nfrom Method get, DataFlow::CallNode call\nwhere\nget.hasQualifiedName(\"net/http\", \"Header\", \"Get\") and\ncall = get.getACall()\nselect call"
-}

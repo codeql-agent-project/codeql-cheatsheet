@@ -7,7 +7,6 @@
 "author": "",
 "authorURL": "",
 "tags": ["java"],
-"categories": [],
 "code": "",
 "complexity": ""
 }
