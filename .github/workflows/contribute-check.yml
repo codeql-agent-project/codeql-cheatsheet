@@ -41,9 +41,33 @@ jobs:
             echo "$file was added"
           done
 
+      - name: List all type copied files
+        run: |
+          for file in ${{ steps.changed-files.outputs.copied_files }}; do
+            echo "$file was modified"
+          done
+
       - name: List all modified files
         run: |
           for file in ${{ steps.changed-files.outputs.modified_files }}; do
+            echo "$file was modified"
+          done
+
+      - name: List all renamed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.renamed_files }}; do
+            echo "$file was modified"
+          done
+
+      - name: List all type changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.type_changed_files }}; do
+            echo "$file was modified"
+          done
+
+      - name: List all type deleted files
+        run: |
+          for file in ${{ steps.changed-files.outputs.deleted_files }}; do
             echo "$file was modified"
           done
 
