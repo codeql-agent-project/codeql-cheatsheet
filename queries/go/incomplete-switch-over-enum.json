@@ -1,0 +1,13 @@
+{ 
+    "id": "incomplete-switch-over-enum", 
+    "name": "Incomplete switch over enum", 
+    "date": "", 
+    "language": "go", 
+    "description": "A switch statement of enum type should explicitly reference each of the members of that enum.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["go", "advanced", "pattern"], 
+    "categories": [], 
+    "code": "import go\nfrom ExpressionSwitchStmt ss, DeclaredConstant c, NamedType t\nwhere\n  t.getUnderlyingType() instanceof IntegerType and\n  t = ss.getExpr().getType() and\n  c.getType() = t and\n  forall(CaseClause case | case = ss.getACase() | not case = c.getAReference().getParent())\nselect ss, \"This switch statement is not exhaustive: missing $@\", c, c.getName()", 
+    "complexity": "advanced" 
+}
