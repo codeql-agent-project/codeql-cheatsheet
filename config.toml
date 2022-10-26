@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://codeql-agent-project.github.io/codeql-cheatsheet'
 languageCode = 'en-us'
 title = 'CodeQL Cheatsheets'
 
