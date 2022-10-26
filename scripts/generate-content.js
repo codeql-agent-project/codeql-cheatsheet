@@ -11,7 +11,7 @@ const config = {
 /**
  * 
  * @param {*} queriesDirPath 
- * @param {*} relPath "" => "/cpp" => "/cpp/sub
+ * @param {*} relPath
  * @returns 
  */
 
