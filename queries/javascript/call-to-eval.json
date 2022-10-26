@@ -8,6 +8,6 @@
     "authorURL": "https://lgtm.com/query/lang:java/",
     "tags": ["pattern","javascript","basic"], 
     "categories": [], 
-    "code": "import javascript\nfrom CallExpr c\nwhere c.getCalleeName() = "eval"\nselect c", 
+    "code": "import javascript\nfrom CallExpr c\nwhere c.getCalleeName() = \"eval\"\nselect c", 
     "complexity": "basic" 
 }

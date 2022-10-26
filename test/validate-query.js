@@ -6,7 +6,7 @@ const path = require("path");
 
 const PROJECT_DIRECTORY_PATH = path.resolve("../");
 const config = {
-    queriesDirectory: `../queries`,
+    queriesDirectory: `${PROJECT_DIRECTORY_PATH}/queries`,
 }
 
 const querySchema = {
@@ -23,7 +23,7 @@ const querySchema = {
         tags: {
             type: "array",
             items: {
-                type: "integer"
+                type: "string"
             }
         },
         description: { type: "string" },
@@ -46,7 +46,7 @@ const queriesDirectories = fs.readdirSync(config.queriesDirectory, { withFileTyp
 describe('Queries JSON Properties Checking', () => {
     queriesDirectories.forEach(folder => {
         describe(folder, () => {
-            fs.readdirSync(`./queries/${folder}`).forEach(file => {
+            fs.readdirSync(`${config.queriesDirectory}/${folder}`).forEach(file => {
                 it(file.split('.json')[0], () => {
                     if (!file.endsWith('.json')) return;
                     const query = require(`${config.queriesDirectory}/${folder}/${file}`);
