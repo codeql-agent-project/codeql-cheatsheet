@@ -21,3 +21,5 @@ hugo new javascript/the-query-name.md
 ### Code to string format
 [Replace " -> \\"](https://coding.tools/regex-replace)  
 [Remove newline -> "\n"](https://www.gillmeister-software.com/online-tools/text/remove-line-breaks.aspx)
+
+#
