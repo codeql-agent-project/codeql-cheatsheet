@@ -1,8 +1,9 @@
-# Query
+# Queries Libraries
 
-This folder holds example queries for each language.
+This folder holds example queries for each language.  
+Each language folder (Ex: /cpp) contains multiple .json files, each file must comply to properties format below.
 
-## Properties
+## Queries Properties
 
 <details>
     <summary>id</summary>
@@ -46,6 +47,13 @@ This folder holds example queries for each language.
 - Type: string
 - Example value: `LGTM`
 - Pattern: `/[a-zA-Z0-9\-]+/`
+</details>
+
+<details>
+    <summary>authorURL</summary>
+
+- Type: string
+- Example value: `https://lgtm.com/query/lang:java/`
 </details>
 
 <details>

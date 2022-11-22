@@ -1,6 +1,12 @@
----
-title: "Cpp"
-date: 2022-10-20T11:25:53+07:00
-draft: true
----
-
+{
+"id": "cpp",
+"name": "Cpp",
+"date": "2022-10-21T01:21:30+07:00",
+"language": "cpp",
+"description": "",
+"author": "",
+"tags": ["cpp"],
+"categories": [],
+"code": "",
+"complexity": ""
+}
