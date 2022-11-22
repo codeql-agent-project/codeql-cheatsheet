@@ -1,0 +1,13 @@
+{ 
+    "id": "access-of-field", 
+    "name": "Access Of Field", 
+    "date": "", 
+    "language": "cpp", 
+    "description": "Finds field read `<field name>` on instance of class type `<class typename>`", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom Field f, FieldAccess access\nwhere\n  f.hasName('aDate') and\n  f.getDeclaringType().hasName('Order') and\n  f = access.getTarget()\nselect access", 
+    "complexity": "basic" 
+}
