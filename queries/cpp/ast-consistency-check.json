@@ -1,0 +1,13 @@
+{ 
+    "id": "ast-consitency-check", 
+    "name": "AST Consistency Check", 
+    "date": "", 
+    "language": "cpp", 
+    "description": "Performs consistency checks on the Abstract Syntax Tree. This query should have no results.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\nimport CastConsistency", 
+    "complexity": "basic" 
+}
