@@ -1,5 +1,13 @@
----
-title: "Javascript"
-date: 2022-10-19T22:05:40+07:00
----
+{
+"id": "javascript",
+"name": "javascript",
+"date": "2022-10-21T01:21:30+07:00",
+"language": "javascript",
+"description": "",
+"author": "",
+"tags": ["javascript"],
+"categories": [],
+"code": "",
+"complexity": ""
+}
 
