@@ -69,3 +69,14 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+
+      # After deploy, sync 'add-queries' to 'main'
+      - uses: actions/checkout@master
+
+      - name: Merge 'main' -> 'add-queries'
+        uses: devmasx/merge-branch@master
+        with:
+          type: now
+          from_branch: main
+          target_branch: add-queries
+          github_token: ${{ secrets.GITHUB_TOKEN }}
