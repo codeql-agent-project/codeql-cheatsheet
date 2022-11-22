@@ -1,5 +1,8 @@
 # CodeQL Cheat Sheet
 
+## Github Pages:
+- [https://codeql-agent-project.github.io/codeql-cheatsheet/](https://codeql-agent-project.github.io/codeql-cheatsheet/)
+
 ## Contribute Queries Guide
 - Fork project repository  
 - Checkout `add-queries` branch
@@ -65,4 +68,6 @@ node ./scripts/generate-content.js
 ### Code to string format
 [Regex replacment](https://coding.tools/regex-replace)  
 [Remove newline](https://www.gillmeister-software.com/online-tools/text/remove-line-breaks.aspx)
+
 [Some update](#)
+
