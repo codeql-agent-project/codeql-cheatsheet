@@ -65,3 +65,4 @@ node ./scripts/generate-content.js
 ### Code to string format
 [Regex replacment](https://coding.tools/regex-replace)  
 [Remove newline](https://www.gillmeister-software.com/online-tools/text/remove-line-breaks.aspx)
+[Some update](#)
