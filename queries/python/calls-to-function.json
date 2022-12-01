@@ -1,0 +1,13 @@
+{ 
+    "id": "calls-to-function", 
+    "name": "Calls to function", 
+    "date": "2022-12-1T22:45:22+07:00", 
+    "language": "python", 
+    "description": "Finds calls to any function named 'len'", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom Value len, CallNode call\nwhere len.getName() = 'len' and len.getACall() = call\nselect call", 
+    "complexity": "basic"
+}

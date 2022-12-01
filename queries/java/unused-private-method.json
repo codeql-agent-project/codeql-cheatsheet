@@ -1,0 +1,12 @@
+{
+    "id": "unused-private-method",
+    "name": "Unused private method",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds private methods that are not accessed",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom Method m\nwhere\n  m.isPrivate() and\n  not exists(m.getAReference()) and\n  not m instanceof InitializerMethod\nselect m",
+    "complexity": "basic"
+}

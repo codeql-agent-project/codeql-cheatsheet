@@ -1,0 +1,12 @@
+{
+    "id": "comments",
+    "name": "Find comments match pattern",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds comments containing the word 'TODO'",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom JavadocText c\nwhere c.getText().regexpMatch('(?si).*\\bTODO\\b.*')\nselect c",
+    "complexity": "basic"
+}

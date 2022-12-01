@@ -1,0 +1,12 @@
+{
+    "id": "find-references-link",
+    "name": "Find references link",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Generates use-definition pairs that provide the data for find-references in the code viewer.",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import definitions\n\nexternal string selectedSourceFile();\n\nfrom Element e, Element def, string kind\nwhere\n  def = definitionOf(e, kind) and def.getFile() = getFileBySourceArchiveName(selectedSourceFile())\nselect e, def, kind",
+    "complexity": "basic"
+}

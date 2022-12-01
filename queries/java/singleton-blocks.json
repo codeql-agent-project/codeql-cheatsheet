@@ -1,0 +1,12 @@
+{
+    "id": "singleton-blocks",
+    "name": "Singleton blocks",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds block statements containing a single statement",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom BlockStmt b\nwhere b.getNumStmt() = 1\nselect b",
+    "complexity": "basic"
+}

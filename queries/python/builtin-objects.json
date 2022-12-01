@@ -1,0 +1,15 @@
+{ 
+    "id": "builtin-objects", 
+    "name": "Builtin objects", 
+    "date": "2022-12-1T09:55:34+07:00", 
+    "language": "python", 
+    "description": "Finds expressions that refer to an object in the builtins module (like int or None).", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\nfrom Expr e, string name\nwhere e.pointsTo(Value::named(name)) and not name.charAt(_) = '.'\nselect e", 
+    "complexity": "basic"
+}
+
+

@@ -1,0 +1,13 @@
+{ 
+    "id": "call-to-method", 
+    "name": "Call to method", 
+    "date": "2022-12-1T16:34:34+07:00", 
+    "language": "python", 
+    "description": "Finds calls to MyClass.methodName", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\nfrom AstNode call, PythonFunctionValue method\nwhere\n  method.getQualifiedName() = 'MyClass.methodName' and\n  method.getACall().getNode() = call\nselect call", 
+    "complexity": "basic"
+}
