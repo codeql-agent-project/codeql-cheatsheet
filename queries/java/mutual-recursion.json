@@ -1,0 +1,12 @@
+{
+    "id": "mutual-recursion",
+    "name": "Mutual recursion",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds pairs of methods that call each other",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom Method m, Method n\nwhere\n  exists(MethodAccess ma | ma.getCaller() = m and ma.getCallee() = n) and\n  exists(MethodAccess ma | ma.getCaller() = n and ma.getCallee() = m) and\n  m != n\nselect m, n",
+    "complexity": "basic"
+}

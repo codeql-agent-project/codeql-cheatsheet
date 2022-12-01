@@ -1,0 +1,12 @@
+{
+    "id": "integer-literal",
+    "name": "Integer Literal",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds places where we use the integer literal `0`",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom IntegerLiteral literal\nwhere literal.getIntValue() = 0\nselect literal",
+    "complexity": "basic"
+}

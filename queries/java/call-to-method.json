@@ -1,0 +1,12 @@
+{
+    "id": "call-to-method",
+    "name": "Call To Method",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds calls to com.example.Class.methodName",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom MethodAccess call, Method method\nwhere\n  call.getMethod() = method and\n  method.hasName('methodName') and\n  method.getDeclaringType().hasQualifiedName('com.example', 'Class')\nselect call",
+    "complexity": "basic"
+}

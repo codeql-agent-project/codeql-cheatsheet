@@ -1,0 +1,12 @@
+{
+    "id": "unused-local-variable",
+    "name": "Unused local variable",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds local variables that are not accessed",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom LocalVariableDecl v\nwhere not exists(v.getAnAccess())\nselect v",
+    "complexity": "basic"
+}

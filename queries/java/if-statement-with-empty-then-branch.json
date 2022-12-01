@@ -1,0 +1,12 @@
+{
+    "id": "if-statement-with-empty-then-branch",
+    "name": "If statements with empty then branch",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds 'if' statements where the 'then' branch is an empty block statement",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom IfStmt i\nwhere i.getThen().(BlockStmt).getNumStmt() = 0\nselect i",
+    "complexity": "basic"
+}

@@ -1,0 +1,12 @@
+{
+    "id": "empty-blocks",
+    "name": "Empty Blocks",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds empty block statements",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom BlockStmt blk\nwhere blk.getNumStmt() = 0\nselect blk",
+    "complexity": "basic"
+}
