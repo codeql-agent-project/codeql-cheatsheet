@@ -1,0 +1,13 @@
+{ 
+    "id": "elif-statement", 
+    "name": "Elif statement", 
+    "date": "2022-12-2T00:07:00+07:00", 
+    "language": "python", 
+    "description": "Finds `elif` sub-statements within `if` statements", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom If i\nwhere i.isElif()\nselect i", 
+    "complexity": "basic"
+}
