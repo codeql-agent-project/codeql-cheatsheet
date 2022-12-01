@@ -1,0 +1,12 @@
+{
+    "id": "add-null-to-collection",
+    "name": "Add Null to Collection",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds places where we add null to a collection",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom MethodAccess call, Method add\nwhere\n  call.getMethod().overrides*(add) and\n  add.hasName('add') and\n  add.getDeclaringType().getSourceDeclaration().hasQualifiedName('java.util', 'Collection') and\n  call.getAnArgument() instanceof NullLiteral\nselect call",
+    "complexity": "basic"
+}

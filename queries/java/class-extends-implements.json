@@ -1,0 +1,12 @@
+{
+    "id": "class-extends-implements",
+    "name": "Class extends/implements",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds classes/interfaces that extend/implement com.example.Class",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom RefType type\nwhere type.getAStrictAncestor().hasQualifiedName('com.example', 'Class')\nselect type",
+    "complexity": "basic"
+}

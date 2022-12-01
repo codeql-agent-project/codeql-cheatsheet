@@ -1,0 +1,12 @@
+{
+    "id": "read-of-field",
+    "name": "Read of field",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds reads of aField (defined on com.example.Class)",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom Field f, FieldRead read\nwhere\n  f.hasName('aField') and\n  f.getDeclaringType().hasQualifiedName('com.example', 'Class') and\n  f = read.getField()\nselect read",
+    "complexity": "basic"
+}

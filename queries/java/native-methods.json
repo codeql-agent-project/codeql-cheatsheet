@@ -1,0 +1,12 @@
+{
+    "id": "native-methods",
+    "name": "Native Methods",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds methods that are native (Java Native Interface)",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom Method m\nwhere m.isNative()\nselect m",
+    "complexity": "basic"
+}

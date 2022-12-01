@@ -1,0 +1,12 @@
+{
+    "id": "conditional-expressions",
+    "name": "Conditional Expressions",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds conditional expressions of the form '... ? ... : ...' where the types of the resulting expressions differ",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom ConditionalExpr e\nwhere\n  e.getTrueExpr().getType() != e.getFalseExpr().getType() and\n  not e.getTrueExpr().getType() instanceof NullType and\n  not e.getFalseExpr().getType() instanceof NullType\nselect e",
+    "complexity": "basic"
+}
