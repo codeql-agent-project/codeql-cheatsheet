@@ -1,0 +1,13 @@
+{
+    "id": "if-statements-with-empty-then-branch", 
+    "name": "If statements with empty then branch", 
+    "date": "2022-12-2T04:01:00+07:00", 
+    "language": "python", 
+    "description": "Finds 'if' statements where the 'then' branch consists entirely of Pass statements",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom If i\nwhere\n  not exists(Stmt s |\n    i.getStmt(_) = s and\n    not s instanceof Pass\n  )\nselect i",
+    "complexity": "basic"
+}

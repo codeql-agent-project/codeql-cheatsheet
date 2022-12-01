@@ -1,0 +1,13 @@
+{
+    "id": "override-of-method", 
+    "name": "Override of method", 
+    "date": "2022-12-2T04:12:00+07:00", 
+    "language": "python", 
+    "description": "Finds methods that override MyClass.methodName",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom FunctionObject override, FunctionObject base\nwhere\n  base.getQualifiedName() = 'MyClass.methodName' and\n  override.overrides(base)\nselect override",
+    "complexity": "basic"
+}

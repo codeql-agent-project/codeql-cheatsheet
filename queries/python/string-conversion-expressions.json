@@ -1,0 +1,13 @@
+{
+    "id": "string-conversion-expressions", 
+    "name": "String conversion expressions", 
+    "date": "2022-12-2T04:30:00+07:00", 
+    "language": "python", 
+    "description": "Finds `String conversions` expressions (expressions enclosed in backticks), which are removed in Python 3",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom Repr r\nselect r",
+    "complexity": "basic"
+}
