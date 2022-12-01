@@ -1,0 +1,13 @@
+{
+    "id": "recursion", 
+    "name": "Recursion", 
+    "date": "2022-12-2T04:22:00+07:00", 
+    "language": "python", 
+    "description": "Finds functions that call themselves",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom PythonFunctionValue f\nwhere f.getACall().getScope() = f.getScope()\nselect f",
+    "complexity": "basic"
+}

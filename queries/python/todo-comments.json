@@ -1,0 +1,13 @@
+{
+    "id": "todo-comments", 
+    "name": "TODO comments", 
+    "date": "2022-12-2T04:33:00+07:00", 
+    "language": "python", 
+    "description": "Finds comments containing the word 'TODO'",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom Comment c\nwhere c.getText().regexpMatch('(?si).*\\\\bTODO\\\\b.*')\nselect c",
+    "complexity": "basic"
+}
