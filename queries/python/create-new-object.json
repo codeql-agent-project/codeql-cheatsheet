@@ -1,0 +1,13 @@
+{ 
+    "id": "create-new-object", 
+    "name": "Create new object", 
+    "date": "2022-12-2T00:00:20+07:00", 
+    "language": "python", 
+    "description": "Finds places where we create a new instanceof `MyClass`", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom Call new, ClassValue cls\nwhere\n  cls.getName() = 'MyClass' and\n  new.getFunc().pointsTo(cls)\nselect new", 
+    "complexity": "basic"
+}
