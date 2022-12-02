@@ -1,0 +1,13 @@
+{ 
+    "id": "cast-expressions", 
+    "name": "Cast expressions", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds casts from a floating point type to an integer type.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom CastExpr c\nwhere\n  c.getExpr().getType() instanceof FloatingPointType and\n  c.getType() instanceof IntegralType\nselect c", 
+    "complexity": "basic" 
+}

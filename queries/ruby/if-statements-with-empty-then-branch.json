@@ -1,0 +1,13 @@
+{ 
+    "id": "if-statements-with-empty-then-branch", 
+    "name": "If statements with empty then branch", 
+    "date": "2022-10-21T01:12:34+07:00", 
+    "language": "ruby", 
+    "description": "Finds 'if' statements where the 'then' branch is an empty block statement", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["ruby", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import codeql.ruby.AST\n\nfrom IfExpr i\nwhere not exists(i.getThen().getAChild())\nselect i", 
+    "complexity": "basic" 
+}
