@@ -1,0 +1,13 @@
+{ 
+    "id": "field-read", 
+    "name": "Field read", 
+    "date": "2022-12-2T16:10:34+07:00", 
+    "language": "go", 
+    "description": "Finds code that reads `Request.Method`.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Field reqm, Read read\nwhere\n  reqm.hasQualifiedName('net/http', 'Request', 'Method' and\n  read = reqm.getARead()\nselect read", 
+    "complexity": "basic" 
+}           

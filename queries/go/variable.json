@@ -1,0 +1,13 @@
+{ 
+    "id": "variable", 
+    "name": "Variable", 
+    "date": "2022-12-2T16:58:34+07:00", 
+    "language": "go", 
+    "description": "Finds variables called \"err\".",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Variable err\nwhere err.getName() = \"err\"\nselect err, err.getDeclaration()", 
+    "complexity": "basic" 
+}

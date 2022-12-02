@@ -1,0 +1,13 @@
+{ 
+    "id": "compile-time-constant", 
+    "name": "Compile-time constant", 
+    "date": "2022-12-2T16:07:34+07:00", 
+    "language": "go", 
+    "description": "Finds compile-time constants with value zero.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom DataFlow::Node zero\nwhere zero.getNumericValue() = 0\nselect zero", 
+    "complexity": "basic" 
+}

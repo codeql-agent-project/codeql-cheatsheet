@@ -1,0 +1,13 @@
+{ 
+    "id": "field-write", 
+    "name": "Field write", 
+    "date": "2022-12-2T16:18:34+07:00", 
+    "language": "go", 
+    "description": "Finds assignments to field `Status` of type `Response` from package `net/http`.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Field status, Write write\nwhere\n  status.hasQualifiedName('net/http', 'Response', 'Status') and\n  write = status.getAWrite()\nselect write, write.getRhs()", 
+    "complexity": "basic" 
+}           

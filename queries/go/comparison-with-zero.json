@@ -1,0 +1,13 @@
+{ 
+    "id": "comparison-with-zero", 
+    "name": "Comparison with zero", 
+    "date": "2022-12-2T15:55:34+07:00", 
+    "language": "go", 
+    "description": "Finds comparisons between an unsigned value and zero.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom DataFlow::RelationalComparisonNode cmp, DataFlow::Node unsigned, DataFlow::Node zero\nwhere\n  zero.getNumericValue() = 0 and\n  unsigned.getType().getUnderlyingType() instanceof UnsignedIntegerType and\n  cmp.leq(_, zero, unsigned, 0)\nselect cmp, unsigned", 
+    "complexity": "basic" 
+}
