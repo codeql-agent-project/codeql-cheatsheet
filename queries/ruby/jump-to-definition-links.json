@@ -1,0 +1,13 @@
+{ 
+    "id": "jump-to-definition-links", 
+    "name": "Jump-to-definition links", 
+    "date": "2022-10-21T01:12:34+07:00", 
+    "language": "ruby", 
+    "description": "Generates use-definition pairs that provide the data for jump-to-definition in the code viewer.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["ruby", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import codeql.IDEContextual\nimport codeql.ruby.AST\n\nexternal string selectedSourceFile();\n\nfrom AstNode e, Variable def, string kind\nwhere\n  e = def.getAnAccess() and\n  kind = \"local variable\" and\n  e.getLocation().getFile() = getFileBySourceArchiveName(selectedSourceFile())\nselect e, def, kind", 
+    "complexity": "basic" 
+}

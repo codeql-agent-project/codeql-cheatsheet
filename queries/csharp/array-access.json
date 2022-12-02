@@ -1,0 +1,13 @@
+{ 
+    "id": "array-access", 
+    "name": "Array access", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds array access expressions with an index expression consisting of a unary increment or decrement, e.g. 'a[i++]'.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom ArrayAccess a\nwhere a.getAnIndex() instanceof MutatorOperation\nselect a", 
+    "complexity": "basic" 
+}

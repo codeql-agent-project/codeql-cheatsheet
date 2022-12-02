@@ -1,0 +1,13 @@
+{ 
+    "id": "switch-statement-case-missing", 
+    "name": "Switch statement case missing", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds switch statements with a missing enum constant case and no default case.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom SwitchStmt switch, Enum enum, EnumConstant missing\nwhere\n  switch.getCondition().getType() = enum and\n  missing.getDeclaringType() = enum and\n  not switch.getAConstCase().getExpr() = missing.getAnAccess() and\n  not exists(switch.getDefaultCase())\nselect switch", 
+    "complexity": "basic" 
+}

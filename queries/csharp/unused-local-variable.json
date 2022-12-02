@@ -1,0 +1,13 @@
+{ 
+    "id": "unused-local-variable", 
+    "name": "Unused local variable", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds local variables that are not accessed.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom LocalVariable v\nwhere not exists(v.getAnAccess())\nselect v", 
+    "complexity": "basic" 
+}

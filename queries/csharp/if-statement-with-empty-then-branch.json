@@ -1,0 +1,13 @@
+{ 
+    "id": "if-statement-with-empty-then-branch", 
+    "name": "If statements with empty then branch", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds 'if' statements where the 'then' branch is an empty block statement", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom IfStmt i\nwhere i.getThen().(BlockStmt).isEmpty()\nselect i", 
+    "complexity": "basic" 
+}

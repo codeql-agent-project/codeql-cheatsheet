@@ -1,0 +1,13 @@
+{ 
+    "id": "find-reference-links", 
+    "name": "Find-references links", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Generates use-definition pairs that provide the data for find-references in the code viewer.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import definitions\n\nexternal string selectedSourceFile();\n\nfrom Use e, Declaration def, string kind\nwhere\n  def = definitionOf(e, kind) and def.getFile() = getFileBySourceArchiveName(selectedSourceFile())\nselect e, def, kind", 
+    "complexity": "basic" 
+}
