@@ -1,0 +1,13 @@
+{
+    "id": "print-ast", 
+    "name": "Print AST", 
+    "date": "2022-12-2T04:39:00+07:00", 
+    "language": "python", 
+    "description": "Outputs a representation of a file's Abstract Syntax Tree. This query is used by the VS Code extension.",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\nimport semmle.python.PrintAst\nimport analysis.DefinitionTracking\n\n/**\n * Gets the source file that will be used to generate the AST.\n */\nexternal string selectedSourceFile();\n\nclass PrintAstConfigurationOverride extends PrintAstConfiguration {\n  /**\n   * Holds if the location matches the selected file in the VS Code extension and\n   * the element is not a synthetic constructor.\n   */\n  override predicate shouldPrint(AstNode e, Location l) {\n    super.shouldPrint(e, l) and\n    l.getFile() = getFileBySourceArchiveName(selectedSourceFile())\n  }\n}",
+    "complexity": "basic"
+}

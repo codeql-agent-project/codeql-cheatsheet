@@ -1,0 +1,13 @@
+{
+    "id": "single-quoted-string-literals", 
+    "name": "Single-quoted string literals", 
+    "date": "2022-12-2T04:25:00+07:00", 
+    "language": "python", 
+    "description": "Finds string literals using single quotes",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom StrConst s\nwhere s.getPrefix().charAt(_) = \"'\"\nselect s",
+    "complexity": "basic"
+}

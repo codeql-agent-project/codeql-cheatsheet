@@ -1,0 +1,13 @@
+{ 
+    "id": "comparison-with-nil", 
+    "name": "Comparison with nil", 
+    "date": "2022-12-2T15:53:34+07:00", 
+    "language": "go", 
+    "description": "Finds comparisons with nil.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom DataFlow::EqualityTestNode eq, DataFlow::Node nd, DataFlow::Node nil\nwhere\n  nil = Builtin::nil().getARead() and\n  eq.eq(_, nd, nil)\nselect eq", 
+    "complexity": "basic" 
+}

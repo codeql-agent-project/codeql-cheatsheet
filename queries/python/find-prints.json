@@ -1,0 +1,13 @@
+{
+    "id": "find-prints", 
+    "name": "Find prints", 
+    "date": "2022-12-2T03:47:00+07:00", 
+    "language": "python", 
+    "description": "Find print statements or calls to the builtin function 'print'",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom AstNode print\nwhere\n  /* Python 2 without `from __future__ import print_function` */\n  print instanceof Print\n  or\n  /* Python 3 or with `from __future__ import print_function` */\n  print.(Call).getFunc().pointsTo(Value::named('print'))\nselect print",
+    "complexity": "basic"
+}

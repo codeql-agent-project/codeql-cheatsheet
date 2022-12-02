@@ -1,0 +1,13 @@
+{ 
+    "id": "call-to-method", 
+    "name": "Call to method", 
+    "date": "2022-12-2T15:41:34+07:00", 
+    "language": "go", 
+    "description": "Finds calls to the `Get` method of type `Header` from the `net/http` package.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Method get, DataFlow::CallNode call\nwhere\n  get.hasQualifiedName('net/http', 'Header', 'Get') and\n  call = get.getACall()\nselect call", 
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "if-statements-with-empty-then-branch", 
+    "name": "If statements with empty then branch", 
+    "date": "2022-12-2T16:23:34+07:00", 
+    "language": "go", 
+    "description": "Finds 'if' statements where the 'then' branch is an empty block statement", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom IfStmt i\nwhere i.getThen().getNumStmt() = 0\nselect i", 
+    "complexity": "basic" 
+}           

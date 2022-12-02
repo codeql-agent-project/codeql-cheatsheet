@@ -1,0 +1,13 @@
+{
+    "id": "store-none-to-collection", 
+    "name": "Store None to collection", 
+    "date": "2022-12-2T04:27:00+07:00", 
+    "language": "python", 
+    "description": "Finds places where `None` is used as an index when storing to a collection",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom SubscriptNode store\nwhere\n  store.isStore() and\n  store.getIndex().pointsTo(Value::named('None'))\nselect store",
+    "complexity": "basic"
+}

@@ -1,0 +1,13 @@
+{
+    "id": "equality-test-on-boolean", 
+    "name": "Equality test on boolean", 
+    "date": "2022-12-2T00:32:00+07:00", 
+    "language": "python", 
+    "description": "Finds tests like `==true`, `==false`, `'!=true`, `is false`",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom Compare eq\nwhere eq.getAComparator() instanceof BooleanLiteral\nselect eq",
+    "complexity": "basic"
+}

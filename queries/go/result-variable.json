@@ -1,0 +1,13 @@
+{ 
+    "id": "result-variable", 
+    "name": "Result variable", 
+    "date": "2022-12-2T16:18:34+07:00", 
+    "language": "go", 
+    "description": "Finds result variables of type \"error\".", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom ResultVariable err\nwhere err.getType() = Builtin::error().getType()\nselect err", 
+    "complexity": "basic" 
+}

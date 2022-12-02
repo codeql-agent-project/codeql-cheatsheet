@@ -1,0 +1,13 @@
+{ 
+    "id": "print-ast", 
+    "name": "Print AST", 
+    "date": "2022-12-2T17:23:34+07:00", 
+    "language": "go", 
+    "description": "Outputs a representation of a file's Abstract Syntax Tree. This query is used by the VS Code extension.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\nimport semmle.go.PrintAst\nimport ideContextual\n\n/**\n * The source file to generate an AST from.\n */\nexternal string selectedSourceFile();\n\n/**\n * Hook to customize the functions printed by this query.\n */\nclass Cfg extends PrintAstConfiguration {\n  override predicate shouldPrintFunction(FuncDecl func) { shouldPrintFile(func.getFile()) }\n\n  override predicate shouldPrintFile(File file) {\n    file = getFileBySourceArchiveName(selectedSourceFile())\n  }\n\n  override predicate shouldPrintComments(File file) { none() }\n}", 
+    "complexity": "basic" 
+}

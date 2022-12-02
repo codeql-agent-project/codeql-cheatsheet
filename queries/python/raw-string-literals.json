@@ -1,0 +1,13 @@
+{
+    "id": "raw-string-literals", 
+    "name": "Raw string literals", 
+    "date": "2022-12-2T04:20:00+07:00", 
+    "language": "python", 
+    "description": "Finds string literals with an 'r' prefix",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom StrConst s\nwhere s.getPrefix().matches('%r%')\nselect s",
+    "complexity": "basic"
+}
