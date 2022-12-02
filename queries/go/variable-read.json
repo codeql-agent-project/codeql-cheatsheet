@@ -1,0 +1,13 @@
+{ 
+    "id": "variable-read", 
+    "name": "Variable read", 
+    "date": "2022-12-2T17:02:34+07:00", 
+    "language": "go", 
+    "description": "Finds code that reads a variable called `err`.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Variable err, Read read\nwhere\n  err.getName() = \"err\" and\n  read = err.getARead()\nselect read", 
+    "complexity": "basic" 
+}

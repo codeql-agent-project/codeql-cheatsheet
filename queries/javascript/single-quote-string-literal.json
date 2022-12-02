@@ -1,0 +1,13 @@
+{ 
+    "id": "single-quote-string-literal", 
+    "name": "Single-quoted string literals", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds string literals using single quotes", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom StringLiteral s\nwhere s.getRawValue().charAt(0) = \"'\"\nselect s", 
+    "complexity": "basic" 
+}

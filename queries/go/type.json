@@ -1,0 +1,13 @@
+{ 
+    "id": "type", 
+    "name": "Type", 
+    "date": "2022-12-2T16:50:50+07:00", 
+    "language": "go", 
+    "description": "Finds type `Request` from package `net/http`.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Type reqtp, PointerType reqptrtp\nwhere\n  reqtp.hasQualifiedName(\"net/http\", \"Request\") and\n  reqptrtp.getBaseType() = reqtp\nselect reqptrtp", 
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "class-with-implicit-default-constructor", 
+    "name": "Class with implicit default constructor", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds classes that do not declare an explicit constructor", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom ClassDefinition c\nwhere c.getConstructor().isSynthetic()\nselect c", 
+    "complexity": "basic" 
+}

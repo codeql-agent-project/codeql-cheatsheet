@@ -1,0 +1,13 @@
+{ 
+    "id": "find-references-links", 
+    "name": "Find-references links", 
+    "date": "2022-12-2T17:25:34+07:00", 
+    "language": "go", 
+    "description": "Generates use-definition pairs that provide the data for find-references in the code viewer.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\nimport ideContextual\n\nexternal string selectedSourceFile();\n\nfrom Ident def, Ident use, Entity e\nwhere\n  use.uses(e) and\n  def.declares(e) and\n  def.getFile() = getFileBySourceArchiveName(selectedSourceFile())\nselect use, def, \"V\"", 
+    "complexity": "basic" 
+}

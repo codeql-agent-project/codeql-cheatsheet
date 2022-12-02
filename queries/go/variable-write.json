@@ -1,0 +1,13 @@
+{ 
+    "id": "variable-write", 
+    "name": "Variable write", 
+    "date": "2022-12-2T17:14:34+07:00", 
+    "language": "go", 
+    "description": "Finds assignments to variables named \"err\".", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Variable err, Write write\nwhere\n  err.getName() = 'err' and\n  write = err.getAWrite()\nselect write, write.getRhs()", 
+    "complexity": "basic" 
+}

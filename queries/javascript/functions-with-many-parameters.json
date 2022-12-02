@@ -1,0 +1,13 @@
+{ 
+    "id": "functions-with-many-parameters", 
+    "name": "Functions with many parameters", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds functions with more than ten parameters", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom Function f\nwhere f.getNumParameter() > 10\nselect f", 
+    "complexity": "basic" 
+}

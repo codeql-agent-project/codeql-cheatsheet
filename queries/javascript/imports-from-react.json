@@ -1,0 +1,13 @@
+{ 
+    "id": "imports-from-react", 
+    "name": "Imports from 'react'", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds import statements that import from module 'react'", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom ImportDeclaration id\nwhere id.getImportedPath().getValue() = 'react'\nselect id", 
+    "complexity": "basic" 
+}

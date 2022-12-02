@@ -1,0 +1,13 @@
+{ 
+    "id": "receiver-variable", 
+    "name": "Receiver variable", 
+    "date": "2022-12-2T16:30:34+07:00",
+    "language": "go",
+    "description": "Finds receiver variables of pointer type.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom ReceiverVariable recv\nwhere recv.getType() instanceof PointerType\nselect recv",
+    "complexity": "basic" 
+}
