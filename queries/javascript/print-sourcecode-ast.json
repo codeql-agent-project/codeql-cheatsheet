@@ -1,0 +1,13 @@
+{ 
+    "id": "print-sourcecode-ast", 
+    "name": "Print source code AST", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Outputs a representation of a file's Abstract Syntax Tree. This query is used by the VS Code extension.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\nimport semmle.javascript.PrintAst\nimport definitions\n\n/**\n * Gets the source file to generate an AST from.\n */\nexternal string selectedSourceFile();\n\nclass PrintAstConfigurationOverride extends PrintAstConfiguration {\n  /**\n   * Holds if the location matches the selected file in the VS Code extension and\n   * the element is not a synthetic constructor.\n   */\n  override predicate shouldPrint(Locatable e, Location l) {\n    super.shouldPrint(e, l) and\n    l.getFile() = getFileBySourceArchiveName(selectedSourceFile())\n  }\n}", 
+    "complexity": "basic" 
+}

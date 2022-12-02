@@ -1,0 +1,13 @@
+{ 
+    "id": "find-reference-link", 
+    "name": "Find-references links", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Generates use-definition pairs that provide the data for find-references in the code viewer.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import definitions\n\nexternal string selectedSourceFile();\n\nfrom Locatable e, AstNode def, string kind\nwhere\n  def = definitionOf(e, kind) and def.getFile() = getFileBySourceArchiveName(selectedSourceFile())\nselect e, def, kind", 
+    "complexity": "basic" 
+}

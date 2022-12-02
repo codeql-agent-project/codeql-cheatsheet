@@ -1,0 +1,13 @@
+{ 
+    "id": "functions-without-return-statements", 
+    "name": "Functions without return statements", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds functions that do not contain a return statement", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom Function f\nwhere\n  exists(f.getABodyStmt()) and\n  not exists(ReturnStmt r | r.getContainer() = f)\nselect f", 
+    "complexity": "basic" 
+}

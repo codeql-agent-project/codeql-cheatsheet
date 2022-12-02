@@ -1,0 +1,13 @@
+{ 
+    "id": "extension-of-standard-query-stored-xss", 
+    "name": "Extension of standard query: Stored XSS", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Extends the standard Stored XSS query with an additional source.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","expert"], 
+    "categories": [], 
+    "code": "import javascript\nimport semmle.javascript.security.dataflow.StoredXssQuery\nimport DataFlow::PathGraph\n\n/**\n * The data returned from a MySQL query, such as the `data` parameter in this example:\n * ```\n * let mysql = require('mysql');\n * let connection = mysql.createConnection();\n *\n * connection.query(..., (e, data) => { ... });\n * ```\n */\nclass MysqlSource extends Source {\n  MysqlSource() {\n    this =\n      DataFlow::moduleImport(\"mysql\")\n          .getAMemberCall(\"createConnection\")\n          .getAMethodCall(\"query\")\n          .getCallback(1)\n          .getParameter(1)\n  }\n}\n\nfrom Configuration cfg, DataFlow::PathNode source, DataFlow::PathNode sink\nwhere cfg.hasFlowPath(source, sink)\nselect sink.getNode(), source, sink, \"Stored XSS from $@.\", source.getNode(), \"database value.\"", 
+    "complexity": "expert" 
+}

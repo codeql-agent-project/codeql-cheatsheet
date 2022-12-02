@@ -1,0 +1,13 @@
+{ 
+    "id": "file-with-given-name", 
+    "name": "File with given name", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds files called `index.js`", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom File f\nwhere f.getBaseName() = 'index.js'\nselect f", 
+    "complexity": "basic" 
+}

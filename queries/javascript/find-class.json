@@ -1,0 +1,13 @@
+{ 
+    "id": "find-class", 
+    "name": "Find class", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds classes called 'File'", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom ClassDefinition cd\nwhere cd.getName() = 'File'\nselect cd", 
+    "complexity": "basic" 
+}

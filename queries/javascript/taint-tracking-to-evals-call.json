@@ -1,0 +1,13 @@
+{ 
+    "id": "taint-tracking-to-evals", 
+    "name": "Taint-tracking to 'eval' calls", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Tracks user-controlled values into 'eval' calls (special case of js/code-injection).", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","advanced"], 
+    "categories": [], 
+    "code": "import javascript\nimport DataFlow\nimport DataFlow::PathGraph\n\nclass EvalTaint extends TaintTracking::Configuration {\n  EvalTaint() { this = \"EvalTaint\" }\n\n  override predicate isSource(Node node) { node instanceof RemoteFlowSource }\n\n  override predicate isSink(Node node) { node = globalVarRef(\"eval\").getACall().getArgument(0) }\n}\n\nfrom EvalTaint cfg, PathNode source, PathNode sink\nwhere cfg.hasFlowPath(source, sink)\nselect sink.getNode(), source, sink, \"Eval with user-controlled input from $@.\", source.getNode(),\n  \"here\"", 
+    "complexity": "advanced" 
+}

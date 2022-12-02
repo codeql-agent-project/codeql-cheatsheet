@@ -1,0 +1,13 @@
+{ 
+    "id": "empty-block", 
+    "name": "Empty block", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds empty block statements", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom BlockStmt blk\nwhere not exists(blk.getAStmt())\nselect blk", 
+    "complexity": "basic" 
+}

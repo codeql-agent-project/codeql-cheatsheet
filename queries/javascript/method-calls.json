@@ -1,0 +1,13 @@
+{ 
+    "id": "method-calls", 
+    "name": "Method calls", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds calls of the form `this.isMounted(...)`", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom MethodCallExpr c\nwhere\n  c.getReceiver() instanceof ThisExpr and\n  c.getMethodName() = 'isMounted'\nselect c", 
+    "complexity": "basic" 
+}

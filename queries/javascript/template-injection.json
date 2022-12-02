@@ -1,0 +1,13 @@
+{ 
+    "id": "template-injection", 
+    "name": "Template injection", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Tracks user-controlled values to an unescaped lodash template placeholder.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","expert"], 
+    "categories": [], 
+    "code": "import javascript\nimport DataFlow\nimport DataFlow::PathGraph\n\n/**\n * Gets the name of an unescaped placeholder in a lodash template.\n *\n * For example, the string `\"<h1><%= title %></h1>\"` contains the placeholder \"title\".\n */\nbindingset[s]\nstring getAPlaceholderInString(string s) {\n  result = s.regexpCapture(\".*<%=\\s*([a-zA-Z0-9_]+)\\s*%>.*\", 1)\n}\n\nclass TemplateInjection extends TaintTracking::Configuration {\n  TemplateInjection() { this = \"TemplateInjection\" }\n\n  override predicate isSource(Node node) { node instanceof RemoteFlowSource }\n\n  override predicate isSink(Node node) {\n    exists(CallNode call, string placeholder |\n      call = LodashUnderscore::member(\"template\").getACall() and\n      placeholder = getAPlaceholderInString(call.getArgument(0).getStringValue()) and\n      node = call.getOptionArgument(1, placeholder)\n    )\n  }\n}\n\nfrom TemplateInjection cfg, PathNode source, PathNode sink\nwhere cfg.hasFlowPath(source, sink)\nselect sink.getNode(), source, sink,\n  \"User-controlled value from $@ occurs unescaped in a lodash template.\", source.getNode(), \"here.\"", 
+    "complexity": "expert" 
+}

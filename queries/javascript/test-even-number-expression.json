@@ -1,0 +1,13 @@
+{ 
+    "id": "test-even-number-expression", 
+    "name": "Tests for even numbers", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds expressions of the form `e % 2 === 0`", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","expert"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom StrictEqExpr eq, ModExpr mod, NumberLiteral zero, NumberLiteral two\nwhere\n  two.getValue() = \"2\" and\n  mod.getRightOperand() = two and\n  zero.getValue() = \"0\" and\n  eq.hasOperands(mod, two)\nselect eq", 
+    "complexity": "basic" 
+}
