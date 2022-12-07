@@ -1,0 +1,13 @@
+{ 
+    "id": "if-statements-with-empty-then-branch", 
+    "name": "If statements with empty then branch", 
+    "date": "2022-12-7T15:31:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds `if` statements where the `then` branch is an empty block statement", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom IfStmt i\nwhere i.getThen().(BlockStmt).getNumStmt() = 0\nselect i",
+    "complexity": "basic" 
+}

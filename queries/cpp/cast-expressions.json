@@ -1,0 +1,13 @@
+{ 
+    "id": "cast-expressions", 
+    "name": "Cast expressions", 
+    "date": "2022-12-7T15:14:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds casts from a floating point type to an integer type", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom Cast c\nwhere\n  c.getExpr().getType() instanceof FloatingPointType and\n  c.getType() instanceof IntegralType\nselect c",
+    "complexity": "basic" 
+}

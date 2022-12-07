@@ -1,0 +1,13 @@
+{ 
+    "id": "ssa-ir-consistency-check", 
+    "name": "SSA IR Consistency Check", 
+    "date": "2022-12-7T15:48:34+07:00", 
+    "language": "cpp", 
+    "description": "Performs consistency checks on the Intermediate Representation. This query should have no results.", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import IRConsistency",
+    "complexity": "basic" 
+}

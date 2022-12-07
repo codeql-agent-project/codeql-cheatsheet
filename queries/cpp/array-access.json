@@ -1,0 +1,14 @@
+{ 
+    "id": "array-access", 
+    "name": "Array access", 
+    "date": "2022-12-7T15:07:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds array access expressions with an index expression consisting of a postfix increment (`++`) expression.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom ArrayExpr a\nwhere a.getArrayOffset() instanceof PostfixIncrExpr\nselect a",
+    "complexity": "basic" 
+}
+

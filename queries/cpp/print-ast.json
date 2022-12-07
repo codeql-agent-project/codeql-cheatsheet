@@ -1,0 +1,13 @@
+{ 
+    "id": "print-ast", 
+    "name": "Print AST", 
+    "date": "2022-12-7T16:06:34+07:00", 
+    "language": "cpp", 
+    "description": "Outputs a representation of a file's Abstract Syntax Tree. This query is used by the VS Code extension.", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\nimport semmle.code.cpp.PrintAST\nimport definitions\n\n/**\n * The source file to generate an AST from.\n */\nexternal string selectedSourceFile();\n\nclass Cfg extends PrintAstConfiguration {\n  /**\n   * Holds if the AST for `func` should be printed.\n   * Print All functions from the selected file.\n   */\n  override predicate shouldPrintFunction(Function func) {\n    func.getFile() = getFileBySourceArchiveName(selectedSourceFile())\n  }\n}",
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "call-to-function", 
+    "name": "Call to function", 
+    "date": "2022-12-7T15:12:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds calls to `std::map<...>::find()`", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom FunctionCall call, Function fcn\nwhere\n  call.getTarget() = fcn and\n  fcn.getDeclaringType().getSimpleName() = 'map' and\n  fcn.getDeclaringType().getNamespace().getName() = 'std' and\n  fcn.hasName('find')\nselect call",
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "class-derives-from", 
+    "name": "Class derives from", 
+    "date": "2022-12-7T15:17:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds classes that derive from `std::exception`", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom Class type\nwhere\n  type.getABaseClass+().hasName('exception') and\n  type.getNamespace().getName() = 'std'\nselect type",
+    "complexity": "basic" 
+}

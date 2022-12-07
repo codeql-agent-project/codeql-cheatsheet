@@ -1,0 +1,13 @@
+{ 
+    "id": "unused-parameter", 
+    "name": "Unused parameter", 
+    "date": "2022-12-7T16:02:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds parameters that are not accessed", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom Parameter p\nwhere p.isNamed() and not exists(p.getAnAccess())\nselect p",
+    "complexity": "basic" 
+}

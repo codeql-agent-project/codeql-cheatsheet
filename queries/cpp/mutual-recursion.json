@@ -1,0 +1,13 @@
+{ 
+    "id": "mutual-recursion", 
+    "name": "Mutual recursion", 
+    "date": "2022-12-7T15:34:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds pairs of functions that call each other", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom Function m, Function n\nwhere\n  exists(FunctionCall c | c.getEnclosingFunction() = m and c.getTarget() = n) and\n  exists(FunctionCall c | c.getEnclosingFunction() = n and c.getTarget() = m) and\n  m != n\nselect m, n",
+    "complexity": "basic" 
+}
