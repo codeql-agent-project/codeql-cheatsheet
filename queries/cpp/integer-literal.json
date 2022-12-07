@@ -1,0 +1,13 @@
+{ 
+    "id": "integer-literal", 
+    "name": "Integer literal", 
+    "date": "2022-12-7T15:33:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds places where we use the integer literal `2`", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom Literal literal\nwhere\n  literal.getType() instanceof IntType and\n  literal.getValue().toInt() = 2\nselect literal",
+    "complexity": "basic" 
+}

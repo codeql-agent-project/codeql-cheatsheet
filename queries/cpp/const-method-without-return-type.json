@@ -1,0 +1,13 @@
+{ 
+    "id": "const-method-without-return-type", 
+    "name": "Const method without return type", 
+    "date": "2022-12-7T15:19:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds const methods whose return type is `void`", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom MemberFunction m\nwhere\n  m.hasSpecifier('const') and\n  m.getType() instanceof VoidType\nselect m",
+    "complexity": "basic" 
+}

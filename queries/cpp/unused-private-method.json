@@ -1,0 +1,13 @@
+{ 
+    "id": "unused-private-method", 
+    "name": "Unused private method", 
+    "date": "2022-12-7T16:03:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds private non-virtual methods that are not accessed", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom MemberFunction fcn\nwhere\n  fcn.isPrivate() and\n  not fcn.isVirtual() and\n  not exists(FunctionCall call | fcn = call.getTarget())\nselect fcn.getDefinition()",
+    "complexity": "basic" 
+}

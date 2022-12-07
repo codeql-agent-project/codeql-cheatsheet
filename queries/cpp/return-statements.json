@@ -1,0 +1,13 @@
+{ 
+    "id": "return-statements", 
+    "name": "Return statements", 
+    "date": "2022-12-7T15:26:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds return statements that return `0`", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom ReturnStmt r\nwhere r.getExpr().(Literal).getValue().toInt() = 0\nselect r",
+    "complexity": "basic" 
+}

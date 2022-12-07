@@ -1,0 +1,13 @@
+{ 
+    "id": "throw-exception-of-type", 
+    "name": "Throw exception of type", 
+    "date": "2022-12-7T15:56:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds places where we throw `parse_error` or one of its sub-types", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom ThrowExpr throw\nwhere throw.getType().(Class).getABaseClass*().getName() = 'parse_error'\nselect throw",
+    "complexity": "basic" 
+}

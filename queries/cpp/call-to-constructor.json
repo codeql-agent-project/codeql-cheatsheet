@@ -1,0 +1,13 @@
+{ 
+    "id": "call-to-constructor", 
+    "name": "Call to constructor", 
+    "date": "2022-12-7T15:08:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds places where we call `new MyClass(...)`", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom NewExpr new, Constructor c\nwhere\n  c = new.getInitializer().(ConstructorCall).getTarget() and\n  c.getName() = 'MyClass'\nselect new",
+    "complexity": "basic" 
+}

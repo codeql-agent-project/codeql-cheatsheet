@@ -1,0 +1,13 @@
+{ 
+    "id": "aliased-ssa-consistency-check", 
+    "name": "Aliased SSA Consistency Check", 
+    "date": "2022-12-7T14:40:34+07:00", 
+    "language": "cpp", 
+    "description": "Performs consistency checks on the SSA construction. This query should have no results.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import SSAConsistency",
+    "complexity": "basic" 
+}

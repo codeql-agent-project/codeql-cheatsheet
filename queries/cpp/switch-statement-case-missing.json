@@ -1,0 +1,13 @@
+{ 
+    "id": "switch-statement-case-missing", 
+    "name": "Switch statement case missing", 
+    "date": "2022-12-7T15:52:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds switch statements with a missing enum constant case and no default case", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom EnumSwitch es, EnumConstant ec\nwhere\n  ec = es.getAMissingCase() and\n  not es.hasDefaultCase()\nselect es, ec",
+    "complexity": "basic" 
+}
