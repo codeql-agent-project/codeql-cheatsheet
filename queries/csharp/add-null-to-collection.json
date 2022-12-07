@@ -1,0 +1,13 @@
+{ 
+    "id": "add-null-to-collection", 
+    "name": "Add null to collection", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds places where we add 'null' to a collection.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom MethodCall call, Method add\nwhere\n  call.getTarget() = add.getAnUltimateImplementor*() and\n  add.hasName(\"Add\") and\n  add.getDeclaringType()\n      .getUnboundDeclaration()\n      .hasQualifiedName(\"System.Collections.Generic.ICollection<>\") and\n  call.getAnArgument() instanceof NullLiteral\nselect call", 
+    "complexity": "basic" 
+}

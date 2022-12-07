@@ -1,0 +1,13 @@
+{ 
+    "id": "todo-comments", 
+    "name": "TODO comments", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds comments containing the word \"TODO\".", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom CommentLine c\nwhere c.getText().regexpMatch(\"(?si).*\\bTODO\\b.*\")\nselect c", 
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "class-extends-implement", 
+    "name": "Class extends/implements", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds classes/interfaces that extend/implement 'System.Collections.IEnumerator'.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom RefType type\nwhere type.getABaseType+().hasQualifiedName(\"System.Collections.IEnumerator\")\nselect type", 
+    "complexity": "basic" 
+}

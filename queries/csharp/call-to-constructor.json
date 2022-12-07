@@ -1,0 +1,13 @@
+{ 
+    "id": "call-to-constructor", 
+    "name": "Call to constructor", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds places where we call 'new System.Exception(...)'.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\nfrom ThrowStmt throw\nwhere throw.getThrownExceptionType().getBaseClass*().hasQualifiedName(\"System.IO.IOException\")\nselect throw", 
+    "complexity": "basic" 
+}

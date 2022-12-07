@@ -1,0 +1,13 @@
+{ 
+    "id": "override-of-method", 
+    "name": "Override of method", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds methods that directly override 'Object.ToString'.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom Method override, Method base\nwhere\n  base.hasName(\"ToString\") and\n  base.getDeclaringType().hasQualifiedName(\"System.Object\") and\n  base.getAnOverrider() = override\nselect override", 
+    "complexity": "basic" 
+}

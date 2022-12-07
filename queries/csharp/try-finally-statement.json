@@ -1,0 +1,13 @@
+{ 
+    "id": "try-finally-statements", 
+    "name": "Try-finally statements", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds try-finally statements without a catch clause.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom TryStmt t\nwhere\n  exists(t.getFinally()) and\n  not exists(t.getACatchClause())\nselect t", 
+    "complexity": "basic" 
+}

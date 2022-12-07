@@ -1,0 +1,13 @@
+{ 
+    "id": "read-of-field", 
+    "name": "Read of field", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds reads of 'VirtualAddress' (defined on 'Mono.Cecil.PE.Section').", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom Field f, FieldRead read\nwhere\n  f.hasName(\"VirtualAddress\") and\n  f.getDeclaringType().hasQualifiedName(\"Mono.Cecil.PE.Section\") and\n  f = read.getTarget()\nselect read", 
+    "complexity": "basic" 
+}

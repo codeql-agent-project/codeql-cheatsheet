@@ -1,0 +1,13 @@
+{ 
+    "id": "method-with-many-parameter", 
+    "name": "Methods with many parameters", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds methods with more than ten parameters.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom Method m\nwhere m.getNumberOfParameters() > 10\nselect m", 
+    "complexity": "basic" 
+}
