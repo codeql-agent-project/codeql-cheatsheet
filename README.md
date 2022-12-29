@@ -30,7 +30,7 @@ For example:
     "authorURL": "https://github.com/hdthinh1012",
     "tags": ["cpp", "basic", "pattern"], 
     "categories": [], 
-    "code": "import cpp\nselect \"Hello world!\"", 
+    "code": "import cpp\nselect \"Hello world!\"",
     "complexity": "basic" 
 }
 ```
