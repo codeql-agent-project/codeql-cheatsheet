@@ -1,6 +1,24 @@
-{{- $.Scratch.Add "pagesIndex" slice -}}
-{{- range (.Site.GetPage "javascript").Pages -}}
-    {{- $pageData := (dict  "url" .Permalink "name" .Params.name "description" .Params.description "language" .Params.language "code" .Params.code "complexity" .Params.complexity "tags" (delimit .Params.tags " ; ") ) -}}
-    {{- $.Scratch.Add "pagesIndex" $pageData -}}
-{{- end -}}
-{{- $.Scratch.Get "pagesIndex" | jsonify -}}
+[
+    {{range readDir "/queries/cpp"}}
+        {{ printf "%s" .Name | printf "%s/%s" "/queries/cpp" | printf "%s" | readFile }},
+    {{end}}
+    {{range readDir "/queries/csharp"}}
+        {{ printf "%s" .Name | printf "%s/%s" "/queries/csharp" | printf "%s" | readFile }},
+    {{end}}
+    {{range readDir "/queries/go"}}
+        {{ printf "%s" .Name | printf "%s/%s" "/queries/go" | printf "%s" | readFile }},
+    {{end}}
+    {{range readDir "/queries/java"}}
+        {{ printf "%s" .Name | printf "%s/%s" "/queries/java" | printf "%s" | readFile }},
+    {{end}}
+    {{range readDir "/queries/javascript"}}
+        {{ printf "%s" .Name | printf "%s/%s" "/queries/javascript" | printf "%s" | readFile }},
+    {{end}}
+    {{range readDir "/queries/python"}}
+        {{ printf "%s" .Name | printf "%s/%s" "/queries/python" | printf "%s" | readFile }},
+    {{end}}
+    {{range readDir "/queries/ruby"}}
+        {{ printf "%s" .Name | printf "%s/%s" "/queries/ruby" | printf "%s" | readFile }},
+    {{end}}
+    {}
+]
