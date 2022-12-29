@@ -1,0 +1,12 @@
+{
+    "id": "method-with-many-parameters",
+    "name": "Method with many parameters",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds methods with more than ten parameters",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom Method m\nwhere m.getNumberOfParameters() > 10\nselect m",
+    "complexity": "basic"
+}

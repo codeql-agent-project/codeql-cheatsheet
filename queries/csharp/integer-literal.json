@@ -1,0 +1,13 @@
+{ 
+    "id": "integer-literal", 
+    "name": "Integer literal", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds places where we use the integer literal '0'.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom IntegerLiteral literal\nwhere literal.getValue().toInt() = 0\nselect literal", 
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "increment-statements-in-loops", 
+    "name": "Increment statements in loops", 
+    "date": "2022-12-2T16:25:34+07:00", 
+    "language": "go", 
+    "description": "Finds increment statements that are nested in a loop", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom IncStmt s, LoopStmt l\nwhere s.getParent+() = l\nselect s, l", 
+    "complexity": "basic" 
+}           

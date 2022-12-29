@@ -1,0 +1,13 @@
+{ 
+    "id": "tagged-template", 
+    "name": "Tagged templates", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds tagged template expressions", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom TaggedTemplateExpr e\nselect e.getTag(), e.getTemplate()", 
+    "complexity": "basic" 
+}

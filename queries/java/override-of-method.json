@@ -1,0 +1,12 @@
+{
+    "id": "override-of-method",
+    "name": "Override of method",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds methods that override com.example.Class.baseMethod",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom Method override, Method base\nwhere\n  base.hasName('baseMethod') and\n  base.getDeclaringType().hasQualifiedName('com.example', 'Class') and\n  override.overrides+(base)\nselect override",
+    "complexity": "basic"
+}

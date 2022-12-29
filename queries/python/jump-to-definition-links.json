@@ -1,0 +1,13 @@
+{
+    "id": "jump-to-definition-links", 
+    "name": "Jump-to-definition links", 
+    "date": "2022-12-2T04:43:00+07:00", 
+    "language": "python", 
+    "description": "Generates use-definition pairs that provide the data for jump-to-definition in the code viewer.",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\nimport analysis.DefinitionTracking\n\nexternal string selectedSourceFile();\n\nfrom NiceLocationExpr use, Definition defn, string kind, string f\nwhere\n  defn = definitionOf(use, kind) and\n  use.hasLocationInfo(f, _, _, _, _) and\n  getFileBySourceArchiveName(selectedSourceFile()).getAbsolutePath() = f\nselect use, defn, kind",
+    "complexity": "basic"
+}

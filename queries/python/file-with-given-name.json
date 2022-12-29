@@ -1,0 +1,13 @@
+{
+    "id": "file-with-given-name", 
+    "name": "File with given name", 
+    "date": "2022-12-2T02:36:00+07:00", 
+    "language": "python", 
+    "description": "Finds files called `spam.py`",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom File f\nwhere f.getShortName() = 'spam.py'\nselect f",
+    "complexity": "basic"
+}

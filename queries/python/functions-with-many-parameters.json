@@ -1,0 +1,13 @@
+{
+    "id": "functions-with-many-parameters", 
+    "name": "Functions with many parameters", 
+    "date": "2022-12-2T03:54:00+07:00", 
+    "language": "python", 
+    "description": "Finds functions with more than 7 parameters",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom Function fcn\nwhere count(fcn.getAnArg()) > 7\nselect fcn",
+    "complexity": "basic"
+}

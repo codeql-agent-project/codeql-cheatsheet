@@ -1,0 +1,13 @@
+{ 
+    "id": "unused-local-variable", 
+    "name": "Unused local variable", 
+    "date": "2022-12-7T15:59:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds local variables that are not accessed", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom LocalScopeVariable v\nwhere\n  not v instanceof Parameter and\n  not exists(v.getAnAccess())\nselect v",
+    "complexity": "basic" 
+}

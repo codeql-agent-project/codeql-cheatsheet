@@ -1,0 +1,13 @@
+{ 
+    "id": "call-to-method", 
+    "name": "Call to method", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds calls to method 'Company.Class.MethodName'.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom MethodCall call, Method method\nwhere\n  call.getTarget() = method and\n  method.hasName(\"MethodName\") and\n  method.getDeclaringType().hasQualifiedName(\"Company.Class\")\nselect call", 
+    "complexity": "basic" 
+}

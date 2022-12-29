@@ -1,0 +1,13 @@
+{ 
+    "id": "address-of-reference-variable", 
+    "name": "Address of reference variable", 
+    "date": "2022-12-7T14:38:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds address-of expressions (`&`) that take the address of a reference variable", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom AddressOfExpr addr, VariableAccess access\nwhere\n  access = addr.getOperand() and\n  access.getTarget().getType() instanceof ReferenceType\nselect addr", 
+    "complexity": "basic" 
+}

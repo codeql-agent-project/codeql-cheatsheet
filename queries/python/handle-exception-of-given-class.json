@@ -1,0 +1,13 @@
+{
+    "id": "handle-exception-of-given-class", 
+    "name": "Handle exception of given class", 
+    "date": "2022-12-2T04:01:00+07:00", 
+    "language": "python", 
+    "description": "Finds places where we handle MyExceptionClass exceptions",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom ExceptStmt ex, ClassValue cls\nwhere\n  cls.getName() = 'MyExceptionClass' and\n  ex.getType().pointsTo(cls)\nselect ex",
+    "complexity": "basic"
+}

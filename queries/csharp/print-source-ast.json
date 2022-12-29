@@ -1,0 +1,13 @@
+{ 
+    "id": "print-source-ast", 
+    "name": "Print source code AST", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Outputs a representation of a file's Abstract Syntax Tree. This query is used by the VS Code extension.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\nimport semmle.code.csharp.PrintAst\nimport definitions\n\n/**\n * The source file to generate an AST from.\n */\nexternal string selectedSourceFile();\n\nclass PrintAstConfigurationOverride extends PrintAstConfiguration {\n  /**\n   * Holds if the location matches the selected file in the VS Code extension and\n   * the element is `fromSource`.\n   */\n  override predicate shouldPrint(Element e, Location l) {\n    super.shouldPrint(e, l) and\n    l.getFile() = getFileBySourceArchiveName(selectedSourceFile())\n  }\n}", 
+    "complexity": "basic" 
+}

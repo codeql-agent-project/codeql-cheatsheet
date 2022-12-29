@@ -1,0 +1,12 @@
+{
+    "id": "field-declared-volatile",
+    "name": "Field declared volatile",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds fields with a 'volatile' modifier",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom Field f\nwhere f.isVolatile()\nselect f",
+    "complexity": "basic"
+}

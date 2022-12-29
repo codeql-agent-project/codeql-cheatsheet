@@ -1,0 +1,13 @@
+{ 
+    "id": "throw-exception-of-given-type", 
+    "name": "Throw exception of given type", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds places where we throw 'System.IO.IOException' or one of its subtypes.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom ObjectCreation new\nwhere new.getObjectType().hasQualifiedName(\"System.Exception\")\nselect new", 
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "call-to-built-in-function", 
+    "name": "Call to built-in function", 
+    "date": "2022-12-2T15:32:34+07:00", 
+    "language": "go", 
+    "description": "Finds calls to the built-in `len` function.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom DataFlow::CallNode call\nwhere call = Builtin::len().getACall()\nselect call", 
+    "complexity": "basic" 
+}

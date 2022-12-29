@@ -1,0 +1,13 @@
+{
+    "id": "empty-blocks", 
+    "name": "Empty blocks", 
+    "date": "2022-12-2T00:28:00+07:00", 
+    "language": "python", 
+    "description": "Finds the first statement in a block consisting of nothing but Pass statements",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom StmtList blk\nwhere not exists(Stmt s | not s instanceof Pass)\nselect blk.getItem(0)",
+    "complexity": "basic"
+}

@@ -1,0 +1,12 @@
+{
+    "id": "array-access",
+    "name": "Array Access",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds array access expressions with an index expression consisting of a unary assignment",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom ArrayAccess a\nwhere a.getIndexExpr() instanceof UnaryAssignExpr\nselect a",
+    "complexity": "basic"
+}

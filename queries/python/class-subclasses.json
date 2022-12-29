@@ -1,0 +1,13 @@
+{ 
+    "id": "class-subclasses", 
+    "name": "Class subclasses", 
+    "date": "2022-12-1T23:54:55+07:00", 
+    "language": "python", 
+    "description": "Finds classes that subclass MyClass", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom ClassObject sub, ClassObject base\nwhere\n  base.getName() = 'MyClass' and\n  sub.getABaseType() = base\nselect sub", 
+    "complexity": "basic"
+}

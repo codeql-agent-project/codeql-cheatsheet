@@ -1,0 +1,13 @@
+{ 
+    "id": "override-of-method", 
+    "name": "Override of method", 
+    "date": "2022-12-7T15:26:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds methods that override `std::exception::what()`", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom MemberFunction override, MemberFunction base\nwhere\n  base.getName() = 'what' and\n  base.getDeclaringType().getName() = 'exception' and\n  base.getDeclaringType().getNamespace().getName() = 'std' and\n  override.overrides+(base)\nselect override",
+    "complexity": "basic" 
+}

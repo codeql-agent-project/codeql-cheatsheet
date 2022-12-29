@@ -1,0 +1,13 @@
+{ 
+    "id": "type-information", 
+    "name": "Type information", 
+    "date": "2022-12-2T16:54:50+07:00", 
+    "language": "go", 
+    "description": "Finds code elements of type `*Request` from package `net/http`.",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Type reqtp, PointerType reqptrtp, DataFlow::Node req\nwhere\n  reqtp.hasQualifiedName(\"net/http\", \"Request\") and\n  reqptrtp.getBaseType() = reqtp and\n  req.getType() = reqptrtp\nselect req", 
+    "complexity": "basic" 
+}

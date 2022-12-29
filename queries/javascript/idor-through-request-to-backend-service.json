@@ -1,0 +1,13 @@
+{ 
+    "id": "idor-through-request-to-backend-service", 
+    "name": "IDOR through request to backend service", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds cases where the 'userId' field in a request to another service is an arbitrary user-controlled value, indicating lack of authentication.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","expert"], 
+    "categories": [], 
+    "code": "import javascript\nimport DataFlow\nimport DataFlow::PathGraph\n\n/**\n * A taint-tracking configuration that tracks user-controlled values into a 'userId' property sent to a backend service.\n */\nclass IdorTaint extends TaintTracking::Configuration {\n  IdorTaint() { this = \"IdorTaint\" }\n\n  override predicate isSource(Node node) { node instanceof RemoteFlowSource }\n\n  override predicate isSink(Node node) { exists(ClientRequest req | node = req.getADataNode()) }\n\n  override predicate isAdditionalTaintStep(Node pred, Node succ) {\n    // Step from x -> { userId: x }\n    succ.(SourceNode).getAPropertyWrite(\"userId\").getRhs() = pred\n  }\n\n  override predicate isSanitizerGuard(TaintTracking::SanitizerGuardNode node) {\n    // After a check like `if (userId === session.user.id)`, the userId is considered safe.\n    node instanceof EqualityGuard\n  }\n}\n\n/**\n * A sanitizer for values that have successfully been compared to another value.\n */\nclass EqualityGuard extends TaintTracking::SanitizerGuardNode, ValueNode {\n  override EqualityTest astNode;\n\n  override predicate sanitizes(boolean outcome, Expr e) {\n    e = astNode.getAnOperand() and\n    outcome = astNode.getPolarity()\n  }\n}\n\nfrom IdorTaint cfg, PathNode source, PathNode sink\nwhere cfg.hasFlowPath(source, sink)\nselect sink.getNode(), source, sink, \"Unauthenticated user ID from $@.\", source.getNode(), \"here\"", 
+    "complexity": "expert" 
+}

@@ -1,0 +1,12 @@
+{
+    "id": "method-without-return-type",
+    "name": "Method without return type",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds methods whose return type is 'void'",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom Method m\nwhere m.getReturnType() instanceof VoidType\nselect m",
+    "complexity": "basic"
+}

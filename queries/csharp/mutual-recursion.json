@@ -1,0 +1,13 @@
+{ 
+    "id": "mutual-recursion", 
+    "name": "Mutual recursion", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds pairs of methods that call each other.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom Method m, Method n\nwhere\n  m.calls(n) and\n  n.calls(m) and\n  m != n\nselect m, n", 
+    "complexity": "basic" 
+}

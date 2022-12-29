@@ -1,0 +1,13 @@
+{ 
+    "id": "expression-qualifier", 
+    "name": "Expression qualifier", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds qualified expressions (e.g. 'a.b()') and their qualifiers ('a').", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom QualifiableExpr qualifiedExpr, Expr qualifier\nwhere qualifier = qualifiedExpr.getQualifier()\nselect qualifiedExpr, qualifier", 
+    "complexity": "basic" 
+}

@@ -1,0 +1,12 @@
+{
+    "id": "switch-statement-case-missing",
+    "name": "Switch statement case missing",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds switch statements with a missing enum constant case and no default case",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom SwitchStmt switch, EnumType enum, EnumConstant missing\nwhere\n  switch.getExpr().getType() = enum and\n  missing.getDeclaringType() = enum and\n  not switch.getAConstCase().getValue() = missing.getAnAccess() and\n  not exists(switch.getDefaultCase())\nselect switch",
+    "complexity": "basic"
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "decoding-after-sanitization-generalized", 
+    "name": "Decoding after sanitization (generalized)", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Tracks the return value of an HTML sanitizer into an escape-sequence decoder, indicating an ineffective sanitization attempt.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","expert"], 
+    "categories": [], 
+    "code": "import javascript\nimport DataFlow\nimport DataFlow::PathGraph\n\n/**\n * A call to a function that may introduce HTML meta-characters by\n * replacing `%3C` or `\u003C` with `<`.\n */\nclass DecodingCall extends CallNode {\n  string kind;\n  Node input;\n\n  DecodingCall() {\n    getCalleeName().matches(\"decodeURI%\") and\n    input = getArgument(0) and\n    kind = \"URI decoding\"\n    or\n    input = this.(JsonParserCall).getInput() and\n    kind = \"JSON parsing\"\n  }\n\n  /** Gets the decoder kind, to be used in the alert message. */\n  string getKind() { result = kind }\n\n  /** Gets the input being decoded. */\n  Node getInput() { result = input }\n}\n\nclass DecodingAfterSanitization extends TaintTracking::Configuration {\n  DecodingAfterSanitization() { this = \"DecodingAfterSanitization\" }\n\n  override predicate isSource(Node node) { node instanceof HtmlSanitizerCall }\n\n  override predicate isSink(Node node) { node = any(DecodingCall c).getInput() }\n}\n\nfrom DecodingAfterSanitization cfg, PathNode source, PathNode sink, DecodingCall decoder\nwhere\n  cfg.hasFlowPath(source, sink) and\n  decoder.getInput() = sink.getNode()\nselect sink.getNode(), source, sink, decoder.getKind() + \" invalidates .\", source.getNode(),\n  \"this HTML sanitization performed\"", 
+    "complexity": "expert" 
+}

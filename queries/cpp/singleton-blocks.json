@@ -1,0 +1,13 @@
+{ 
+    "id": "singleton-blocks", 
+    "name": "Singleton blocks", 
+    "date": "2022-12-7T15:50:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds block statements containing a single statement", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom BlockStmt b\nwhere b.getNumStmt() = 1\nselect b",
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "conditional-expression", 
+    "name": "Conditional expression", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds conditional expressions of the form '... ? ... : ...' where the types of the resulting expressions differ.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom ConditionalExpr e\nwhere\n  e.getThen().stripImplicitCasts() != e.getElse().stripImplicitCasts() and\n  not e.getThen().getType() instanceof NullType and\n  not e.getElse().getType() instanceof NullType\nselect e", 
+    "complexity": "basic" 
+}

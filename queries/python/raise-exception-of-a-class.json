@@ -1,0 +1,13 @@
+{
+    "id": "raise-exception-of-a-class", 
+    "name": "Raise exception of a class", 
+    "date": "2022-12-2T04:16:00+07:00", 
+    "language": "python", 
+    "description": "Finds places where we raise AnException or one of its subclasses",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom Raise raise, ClassValue ex\nwhere\n  ex.getName() = 'AnException' and\n  raise.getException().pointsTo(ex.getASuperType())\nselect raise, 'Don't raise instances of 'AnException''",
+    "complexity": "basic"
+}

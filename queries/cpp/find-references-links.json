@@ -1,0 +1,13 @@
+{ 
+    "id": "find-references-links", 
+    "name": "Find-references links", 
+    "date": "2022-12-7T16:18:34+07:00", 
+    "language": "cpp", 
+    "description": "Generates use-definition pairs that provide the data for find-references in the code viewer of VSCode.", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import definitions\n\nexternal string selectedSourceFile();\n\nfrom Top e, Top def, string kind\nwhere\n  def = definitionOf(e, kind) and def.getFile() = getFileBySourceArchiveName(selectedSourceFile())\nselect e, def, kind",
+    "complexity": "basic" 
+}

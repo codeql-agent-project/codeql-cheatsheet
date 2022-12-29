@@ -1,0 +1,12 @@
+{
+    "id": "cast-expressions",
+    "name": "Cast expressions",
+    "date": "2022-10-26T17:34:51+07:00",
+    "language": "java",
+    "description": "Finds casts from a floating point type to an integer type",
+    "author": "Semmle LGTM",
+    "authorURL": "https://lgtm.com/query/lang:java/",
+    "tags": ["java", "basic", "pattern"],
+    "code": "import java\n\nfrom CastExpr c\nwhere\n  c.getExpr().getType() instanceof FloatingPointType and\n  c.getType() instanceof IntegralType\nselect c",
+    "complexity": "basic"
+}

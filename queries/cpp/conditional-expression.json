@@ -1,0 +1,13 @@
+{ 
+    "id": "conditional-expressions", 
+    "name": "Conditional Expressions", 
+    "date": "2022-10-21T01:12:34+07:00", 
+    "language": "cpp", 
+    "description": "Finds conditional expressions of the form `... ? ... : ...` where the types of the resulting expressions differ", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import cpp\n\nfrom ConditionalExpr e\nwhere e.getThen().getType() != e.getElse().getType()\nselect e", 
+    "complexity": "basic" 
+}

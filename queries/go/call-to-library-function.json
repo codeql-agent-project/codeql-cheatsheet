@@ -1,0 +1,13 @@
+{ 
+    "id": "call-to-library-function", 
+    "name": "Call to library function", 
+    "date": "2022-12-2T15:32:34+07:00", 
+    "language": "go", 
+    "description": "Finds calls to \"fmt.Println.\"", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Function println, DataFlow::CallNode call\nwhere\n  println.hasQualifiedName('fmt', 'Println') and\n  call = println.getACall()\nselect call", 
+    "complexity": "basic" 
+}

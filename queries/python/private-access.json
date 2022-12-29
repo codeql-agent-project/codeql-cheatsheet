@@ -1,0 +1,13 @@
+{
+    "id": "private-access", 
+    "name": "Private access", 
+    "date": "2022-12-2T04:13:00+07:00", 
+    "language": "python", 
+    "description": "Find accesses to 'private' attributes (those starting with an underscore)",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\npredicate is_private(Attribute a) {\n  a.getName().matches('\\\\_%') and\n  not a.getName().matches('\\\\_\\\\_%\\\\_\\\\_')\n}\n\nfrom Attribute access\nwhere\n  is_private(access) and\n  not access.getObject().(Name).getId() = 'self'\nselect access",
+    "complexity": "basic"
+}

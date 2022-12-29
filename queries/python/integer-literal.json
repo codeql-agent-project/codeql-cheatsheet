@@ -1,0 +1,13 @@
+{
+    "id": "integer-literal", 
+    "name": "Integer literal", 
+    "date": "2022-12-2T04:06:00+07:00", 
+    "language": "python", 
+    "description": "Finds places where we use the integer literal `0`",
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:python/",
+    "tags": ["python", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import python\n\nfrom IntegerLiteral literal\nwhere literal.getValue() = 0\nselect literal",
+    "complexity": "basic"
+}

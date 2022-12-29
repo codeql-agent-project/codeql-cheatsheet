@@ -1,0 +1,13 @@
+{ 
+    "id": "parameter-search-by-name", 
+    "name": "Parameters searched by name", 
+    "date": "2022-10-20T13:10:11+07:00", 
+    "language": "javascript", 
+    "description": "Finds parameters called 'arguments'", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:javascript/",
+    "tags": ["pattern","javascript","basic"], 
+    "categories": [], 
+    "code": "import javascript\n\nfrom SimpleParameter p\nwhere p.getName() = 'arguments'\nselect p", 
+    "complexity": "basic" 
+}

@@ -1,0 +1,13 @@
+{ 
+    "id": "jump-to-definition-links", 
+    "name": "Jump-to-definition links", 
+    "date": "2022-12-7T16:19:34+07:00", 
+    "language": "cpp", 
+    "description": "Generates use-definition pairs that provide the data for jump-to-definition in the code viewer of VSCode.", 
+    "author": "LGTM",
+    "authorURL": "https://lgtm.com/query/lang:cpp/",
+    "tags": ["cpp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import definitions\n\nexternal string selectedSourceFile();\n\nfrom Top e, Top def, string kind\nwhere def = definitionOf(e, kind) and e.getFile() = getFileBySourceArchiveName(selectedSourceFile())\nselect e, def, kind",
+    "complexity": "basic" 
+}

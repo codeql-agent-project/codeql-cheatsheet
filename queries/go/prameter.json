@@ -1,0 +1,13 @@
+{ 
+    "id": "parameter", 
+    "name": "Parameter", 
+    "date": "2022-12-2T16:28:34+07:00", 
+    "language": "go", 
+    "description": "Finds parameters of type \"ResponseWriter\" from package \"net/http\".", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:go/",
+    "tags": ["go", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import go\n\nfrom Parameter req\nwhere req.getType().hasQualifiedName('net/http', 'ResponseWriter')\nselect req", 
+    "complexity": "basic" 
+}

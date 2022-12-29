@@ -1,0 +1,13 @@
+{ 
+    "id": "method-without-return-type", 
+    "name": "Methods without return type", 
+    "date": "", 
+    "language": "csharp", 
+    "description": "Finds methods whose return type is 'void'.", 
+    "author": "LGTM", 
+    "authorURL": "https://lgtm.com/query/lang:csharp/",
+    "tags": ["csharp", "basic", "pattern"], 
+    "categories": [], 
+    "code": "import csharp\n\nfrom Method m\nwhere m.getReturnType() instanceof VoidType\nselect m", 
+    "complexity": "basic" 
+}
