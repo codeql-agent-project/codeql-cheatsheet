@@ -1,0 +1,30 @@
+- latitude: -40.851817
+  longitude: 174.911756
+  name: Kaka
+  image: /kaka.jpg
+  status: At Risk
+- latitude: -46.771704
+  longitude: 167.632827
+  name: Kaka
+  image: /kaka.jpg
+  status: At Risk
+- latitude: -42.931589
+  longitude: 171.566850
+  name: Kea
+  image: /kea.jpg
+  status: Nationally Endangered
+- latitude: -44.764672
+  longitude: 167.989476
+  name: Kea
+  image: /kea.jpg
+  status: Nationally Endangered
+- latitude: -45.795599
+  longitude: 170.730737
+  name: Hoiho
+  image: /hoiho.jpg
+  status: Nationally Endangered
+- latitude: -43.718755
+  longitude: 173.005782
+  name: Hoiho
+  image: /hoiho.jpg
+  status: Nationally Endangered
