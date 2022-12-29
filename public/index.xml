@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Home on CodeQL Cheatsheets</title><link>https://codeql-agent-project.github.io/codeql-cheatsheet/</link><description>Recent content in Home on CodeQL Cheatsheets</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 21 Oct 2022 01:22:11 +0700</lastBuildDate><atom:link href="https://codeql-agent-project.github.io/codeql-cheatsheet/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://codeql-agent-project.github.io/codeql-cheatsheet/readme/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://codeql-agent-project.github.io/codeql-cheatsheet/readme/</guid><description>Query This folder holds example queries for each language.
+Properties Type: string Example value: array-access Pattern: /^[a-zA-Z0-9\-]+/$ Type: string Example value: Array Access Type: string Accepted value: go, javascript, java, python, cpp, csharp, ruby Type: string Example value: Finds array access expressions with an index expression consisting of a postfix increment (++) expression. Type: array of strings Example value: ['javascript', 'basic', 'pattern'] Type: string Example value: LGTM Pattern: /[a-zA-Z0-9\-]+/ Type: string Example value: import cpp
+from ArrayExpr a
+where a.</description></item><item><title>About</title><link>https://codeql-agent-project.github.io/codeql-cheatsheet/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://codeql-agent-project.github.io/codeql-cheatsheet/about/</guid><description>About this site CodeQL Cheatsheets is create to provide CodeQL researchers detailed, varied QL queries references.
+Our amazing team
+If you have some questions, feel free to contact us.
+vovikhangcdv
+Github
+hdthinh1012
+Github
+L3on30
+Github</description></item></channel></rss>
