@@ -44,7 +44,7 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          # extended: true
+          extended: true
 
       - name: Use Node.js 16
         uses: actions/setup-node@v2
