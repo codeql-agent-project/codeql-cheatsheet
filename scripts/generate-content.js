@@ -1,19 +1,19 @@
 const fs = require("node:fs");
 const path = require("path");
 
-const PROJECT_DIRECTORY_PATH = path.resolve("..");
-// const PROJECT_DIRECTORY_PATH = process.env.GITHUB_WORKSPACE;
+// const PROJECT_DIRECTORY_PATH = path.resolve("..");
+const PROJECT_DIRECTORY_PATH = process.env.GITHUB_WORKSPACE;
 
 // ubuntu github deploy machine
-// const config = {
-//     queriesDirectory: `${PROJECT_DIRECTORY_PATH}/queries`,
-//     contentDirectory: `${PROJECT_DIRECTORY_PATH}/content`,
-// }
-// windows dev
 const config = {
-    queriesDirectory: `${PROJECT_DIRECTORY_PATH}\\queries`,
-    contentDirectory: `${PROJECT_DIRECTORY_PATH}\\content`,
+    queriesDirectory: `${PROJECT_DIRECTORY_PATH}/queries`,
+    contentDirectory: `${PROJECT_DIRECTORY_PATH}/content`,
 }
+// windows dev
+// const config = {
+//     queriesDirectory: `${PROJECT_DIRECTORY_PATH}\\queries`,
+//     contentDirectory: `${PROJECT_DIRECTORY_PATH}\\content`,
+// }
 
 
 /**
@@ -49,10 +49,10 @@ const fileTraverse = (queriesDirPath, relPath) => {
 
 
 // ubuntu github deploy machine
-// const queriesJsonList = fileTraverse(config.queriesDirectory, "/");
+const queriesJsonList = fileTraverse(config.queriesDirectory, "/");
 
 // window dev machine
-const queriesJsonList = fileTraverse(config.queriesDirectory, "\\");
+// const queriesJsonList = fileTraverse(config.queriesDirectory, "\\");
 
 // console.log(queriesJsonList);
 
