@@ -1,6 +1,6 @@
 {{define "main"}}
 <h1 class="col-header dark-orange">Go Cheatsheets</h1>
-    {{ range (.Site.GetPage "go").Pages }}
-        {{ partial "queries-list.html" . }}
-    {{end}}
+{{ range (.Site.GetPage "go").Pages }}
+{{ partial "queries-list.html" . }}
+{{end}}
 {{end}}

@@ -16,7 +16,7 @@ pre[class^="language-"] {
     margin: 20px 0px;
 }
 
-.queries-list-item{
+.queries-list-item {
     width: 100%;
     margin: 5px;
     padding: 3px;
@@ -28,10 +28,10 @@ pre[class^="language-"] {
     border-top-right-radius: 6px;
 
     display: grid;
-    grid-template-columns: 15% 30% 50% 5%;
+    grid-template-columns: 20% 30% 45% 5%;
 }
 
-.queries-list-item:hover{
+.queries-list-item:hover {
     background-color: #eef1f5;
     border-color: #e1e4e8;
 }
@@ -42,8 +42,9 @@ pre[class^="language-"] {
     margin: 6px 2px;
 }
 
-.preview-description{
-    font-size: 1.1rem;
+.preview-description {
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .preview-arrow-icons {
@@ -53,4 +54,14 @@ pre[class^="language-"] {
 
 .preview-title:hover {
     text-decoration: none;
+}
+
+.preview-complexity {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.preview-first-col {
+    display: flex;
+    flex-wrap: wrap;
 }

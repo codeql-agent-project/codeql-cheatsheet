@@ -1,12 +1,16 @@
 <div class="site-search" class="widget-site-search widget">
     <div class="search-flex">
-        <form class="search-form" name="searchForm" role="form" onsubmit="return false" action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get">
+        <form class="search-form" name="searchForm" role="form" onsubmit="return false"
+            action='{{ with .GetPage "/search" }}{{.Permalink}}{{end}}' method="get">
             <div class="search-wrapper">
                 <label hidden for="search-input">Search site</label>
-                <h4>Search Queries</h4>
+                <h1 class="search-form-title col-header dark-orange">Search QL Custom Queries</h1>
+                <p class="search-form-title-substring">Order by queries name, language, description and the content
+                    itself</p>
                 <div class="search-container">
                     <i class="fa fa-search"></i>
-                    <input autocomplete="off" placeholder="Search example queries ...." class="search-input" aria-label="Search site" type="text" name="q">
+                    <input autocomplete="off" placeholder="Search example queries ...." class="search-input"
+                        aria-label="Search site" type="text" name="q">
                     <input class="search-submit-button" type="submit" value="Search">
                 </div>
                 <div class="search-error hide-element"><span class="search-error-message"></span></div>

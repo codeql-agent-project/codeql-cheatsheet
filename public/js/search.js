@@ -6,7 +6,7 @@ async function initSearchIndex() {
     try {
         const response = fetch("/index.json");
         pagesIndex = await (await response).json();
-        searchIndex = lunr(function() {
+        searchIndex = lunr(function () {
             this.ref("url");
             this.field('id', {
                 boost: 20
@@ -48,15 +48,15 @@ function handleSearchQuery(event) {
     event.preventDefault();
     const query = document.querySelector(".search-input")[0].value.trim().toLowerCase();
 
-    if (query.length < 3){
+    if (query.length < 3) {
         displayErrorMessage("Please enter a search term at least 3 characters!");
         return;
     }
 
     const results = searchSite(query)
     if (!results.length) {
-      displayErrorMessage("Your search returned no results")
-      return
+        displayErrorMessage("Your search returned no results")
+        return
     }
 }
 
@@ -71,8 +71,8 @@ function searchSite(query) {
     const originalQuery = query;
     query = getLunrSearchQuery(query);
     let results = getSearchResults(query);
-    return results.length ? results 
-                            : query !== originalQuery ? getSearchResults(originalQuery) : [];
+    return results.length ? results
+        : query !== originalQuery ? getSearchResults(originalQuery) : [];
 }
 
 function getSearchResults(query) {
