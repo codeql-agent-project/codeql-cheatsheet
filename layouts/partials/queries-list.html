@@ -1,6 +1,10 @@
 <div class="queries-list-item" onclick='window.location.href="{{.Permalink}}"'>
-    <p>[{{.Params.complexity | upper}}]</p><a class="preview-title" href="{{ .Permalink }}">{{ .Params.name }}</a> 
-    <p class="preview-description">{{.Params.description}}</p> 
+    <div class="preview-first-col">
+        <p class="preview-complexity">[{{.Params.complexity | upper}}]</p>
+        <p class="preview-complexity">[{{.Params.language | upper}}]</p>
+    </div>
+    <a class="preview-title" href="{{ .Permalink }}">{{ .Params.name }}</a>
+    <p class="preview-description">{{.Params.description}}</p>
     <a href="{{ .Permalink }}">
         <img class="preview-arrow-icons" src="/right-arrow.svg">
     </a>
